@@ -1,0 +1,21 @@
+FLBR id '32' sc 0 lt 0 dc lt 6 ir  0 ms '' ii  -2.008102E-07 ar  1690 flbr
+FLBR id 'VE_2020_C' sc 0 lt 0 dc lt 0 0 0 flbr
+FLBR id 'NE_2020_C' sc 0 lt 0 dc lt 7 ir 0 ms 'De Bilt' ii  0 ar  1690 flbr
+FLBR id 'NE_2020_F' sc 0 lt 0 dc lt 7 ir 0 ms 'De Bilt' ii  0 ar  400 flbr
+FLBR id 'VE_2020_F' sc 0 lt 0 dc lt 0 0 0 flbr
+FLBR id 'KW_2020_F' sc 0 lt 0 dc lt 6 ir  0 ms '' ii  2.921875E-07 ar  400 flbr
+FLBR id 'NE_2040_A1' sc 0 lt 0 dc lt 7 ir 0 ms 'De Bilt' ii  0 ar  436 flbr
+FLBR id 'VE_2040_A1' sc 0 lt 0 dc lt 0 0 0 flbr
+FLBR id 'KW_2040_A1' sc 0 lt 0 dc lt 6 ir  0 ms '' ii  0 ar  436 flbr
+FLBR id 'KW_2020_E' sc 0 lt 0 dc lt 6 ir  0 ms '' ii  -2.998958E-07 ar  7289 flbr
+FLBR id 'VE_2020_E' sc 0 lt 0 dc lt 0 0 0 flbr
+FLBR id 'NE_2020_E' sc 0 lt 0 dc lt 7 ir 0 ms 'De Bilt' ii  0 ar  7289 flbr
+FLBR id 'KW_2020_D' sc 0 lt 0 dc lt 6 ir  0 ms '' ii  -4.689583E-07 ar  26555 flbr
+FLBR id 'VE_2020_D' sc 0 lt 0 dc lt 0 0 0 flbr
+FLBR id 'NE_2020_D' sc 0 lt 0 dc lt 7 ir 0 ms 'De Bilt' ii  0 ar  26555 flbr
+FLBR id 'NE_2020_A' sc 0 lt 0 dc lt 7 ir 0 ms 'De Bilt' ii  0 ar  19624 flbr
+FLBR id 'VE_2020_A' sc 0 lt 0 dc lt 0 0 0 flbr
+FLBR id 'KW_2020_A' sc 0 lt 0 dc lt 6 ir  0 ms '' ii  -5.303241E-07 ar  19624 flbr
+FLBR id 'NE_2020_B' sc 0 lt 0 dc lt 7 ir 0 ms 'De Bilt' ii  0 ar  3413 flbr
+FLBR id 'VE_2020_B' sc 0 lt 0 dc lt 0 0 0 flbr
+FLBR id 'KW_2020_B' sc 0 lt 0 dc lt 6 ir  0 ms '' ii  -4.310995E-07 ar  3413 flbr

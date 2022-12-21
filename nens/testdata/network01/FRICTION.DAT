@@ -1,0 +1,16 @@
+GLFR id '0' 
+BDFR id '0' ci '0' mf 7 sf 7 mr cp 0 30 0 mt cp 0 30 0 st cp 0 30 0 sr cp 0 30 bdfr glfr
+STFR id 'fr_KBR_1' ci 'sd_KBR_1' mf 3 mt cp 0 71 0 mr cp 0 71 0 s1 6 s2 6 sf 3 st cp 0 71 0 sr cp 0 71 stfr
+STFR id 'fr_KBR_2' ci 'sd_KBR_2' mf 3 mt cp 0 78 0 mr cp 0 78 0 s1 6 s2 6 sf 3 st cp 0 78 0 sr cp 0 78 stfr
+STFR id 'fr_KDU_1' ci 'sd_KDU_1' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KDU_2' ci 'sd_KDU_2' mf 3 mt cp 0 71 0 mr cp 0 71 0 s1 6 s2 6 sf 3 st cp 0 71 0 sr cp 0 71 stfr
+STFR id 'fr_KDU_3' ci 'sd_KDU_3' mf 3 mt cp 0 78 0 mr cp 0 78 0 s1 6 s2 6 sf 3 st cp 0 78 0 sr cp 0 78 stfr
+STFR id 'fr_KDU_4' ci 'sd_KDU_4' mf 3 mt cp 0 73 0 mr cp 0 73 0 s1 6 s2 6 sf 3 st cp 0 73 0 sr cp 0 73 stfr
+STFR id 'fr_KSY_1' ci 'sd_KSY_1' mf 3 mt cp 0 76 0 mr cp 0 76 0 s1 6 s2 6 sf 3 st cp 0 76 0 sr cp 0 76 stfr
+STFR id 'fr_KSY_2' ci 'sd_KSY_2' mf 3 mt cp 0 69 0 mr cp 0 69 0 s1 6 s2 6 sf 3 st cp 0 69 0 sr cp 0 69 stfr
+BDFR id 'fr_WL_6' ci 'WL_6' mf 7 mt cp 0 30 0 mr cp 0 30 0 s1 6 s2 6 bdfr
+BDFR id 'fr_WL_3' ci 'WL_3' mf 7 mt cp 0 27 0 mr cp 0 27 0 s1 6 s2 6 bdfr
+BDFR id 'fr_WL_1' ci 'WL_1' mf 7 mt cp 0 32 0 mr cp 0 32 0 s1 6 s2 6 bdfr
+BDFR id 'fr_WL_2' ci 'WL_2' mf 7 mt cp 0 31 0 mr cp 0 31 0 s1 6 s2 6 bdfr
+BDFR id 'fr_WL_5' ci 'WL_5' mf 7 mt cp 0 28 0 mr cp 0 28 0 s1 6 s2 6 bdfr
+BDFR id 'fr_WL_4' ci 'WL_4' mf 7 mt cp 0 29 0 mr cp 0 29 0 s1 6 s2 6 bdfr

@@ -1,0 +1,45 @@
+[Version]
+version=1.0
+
+[Header]
+Type=201
+ID=init
+Name=init
+Description=init
+
+[Files]
+input=
+output=
+print=
+log=
+
+[DataSets]
+Base=
+Grid=
+
+[Flairs]
+topsystem=1
+aquifers=1
+relax=.234
+inner=498
+outer=89
+converge=.0104
+print=1
+
+[Parameters]
+IR=IR.PAR,IR.UNG,IR.ADO,169,11,Const,Recharge parameter number
+RP1=RP1.PAR,RP1.UNG,RP1.ADO,169,0.001,Const,Precipitation excess
+RP2=RP2.PAR,RP2.UNG,RP2.ADO,169,1000,Arpadi,Hydraulic resistance semi-pervious layer
+RP3=RP3.PAR,RP3.UNG,RP3.ADO,169,1,Const,Drainage resistance between drains/canals
+RP4=RP4.PAR,RP4.UNG,RP4.ADO,169,1,Const,Infiltration resistance between drains/canals
+RP5=RP5.PAR,RP5.UNG,RP5.ADO,169,0,Arpadi,Controlled water level
+IB1=IB1.PAR,IB1.UNG,IB1.ADO,171,0,Const,Boundary condition of aquifer 1
+BH1=BH1.PAR,BH1.UNG,BH1.ADO,171,0,ParBou,Boundary head in aquifer 1
+IS1=IS1.PAR,IS1.UNG,IS1.ADO,170,0,Const,Type of source input in aquifer 1
+SQ1=SQ1.PAR,SQ1.UNG,SQ1.ADO,170,10000,ParAdo,Source discharge in aquifer 1
+RW1=RW1.PAR,RW1.UNG,RW1.ADO,172,1,Const,River widths in aquifer 1
+HR1=HR1.PAR,HR1.UNG,HR1.ADO,172,0,Const,Water levels in rivers in aquifer 1
+CD1=CD1.PAR,CD1.UNG,CD1.ADO,172,10,Const,Drainage resistance of rivers in aquifer 1
+CI1=CI1.PAR,CI1.UNG,CI1.ADO,172,10,Const,Infiltration resistance of rivers in aquifer 1
+RA1=RA1.PAR,RA1.UNG,RA1.ADO,172,1,Const,River activity in aquifer 1
+TX1=TX1.PAR,TX1.UNG,TX1.ADO,169,1000,InvDist,Transmissivity X-direction aquifer 1

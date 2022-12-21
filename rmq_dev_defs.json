@@ -1,0 +1,243 @@
+{
+    "rabbit_version": "3.7.7",
+    "users": [
+        {
+            "name": "flooding",
+            "password_hash": "+oZmungQbdl+YwTq+VPAZRN3Q0GCaYmpPWqpp2G/m7GBcmRE",
+            "hashing_algorithm": "rabbit_password_hashing_sha256",
+            "tags": "administrator"
+        }
+    ],
+    "vhosts": [
+        {
+            "name": "flooding"
+        }
+    ],
+    "permissions": [
+        {
+            "user": "flooding",
+            "vhost": "flooding",
+            "configure": ".*",
+            "write": ".*",
+            "read": ".*"
+        }
+    ],
+    "topic_permissions": [],
+    "parameters": [],
+    "global_parameters": [
+        {
+            "name": "cluster_name",
+            "value": "rabbit@867eed778b5b"
+        }
+    ],
+    "policies": [],
+    "queues": [
+        {
+            "name": "222",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "150",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "220",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "201",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "155",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "200",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "221",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "210",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "185",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "180",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "132",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "134",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "190",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        },
+        {
+            "name": "162",
+            "vhost": "flooding",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {}
+        }
+    ],
+    "exchanges": [
+        {
+            "name": "router",
+            "vhost": "flooding",
+            "type": "direct",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        }
+    ],
+    "bindings": [
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "150",
+            "destination_type": "queue",
+            "routing_key": "150",
+            "arguments": {}
+        },
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "155",
+            "destination_type": "queue",
+            "routing_key": "155",
+            "arguments": {}
+        },
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "200",
+            "destination_type": "queue",
+            "routing_key": "200",
+            "arguments": {}
+        },
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "201",
+            "destination_type": "queue",
+            "routing_key": "201",
+            "arguments": {}
+        },
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "220",
+            "destination_type": "queue",
+            "routing_key": "220",
+            "arguments": {}
+        },
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "180",
+            "destination_type": "queue",
+            "routing_key": "180",
+            "arguments": {}
+        },
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "120",
+            "destination_type": "queue",
+            "routing_key": "120",
+            "arguments": {}
+        },
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "132",
+            "destination_type": "queue",
+            "routing_key": "132",
+            "arguments": {}
+        },
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "134",
+            "destination_type": "queue",
+            "routing_key": "134",
+            "arguments": {}
+        },
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "162",
+            "destination_type": "queue",
+            "routing_key": "162",
+            "arguments": {}
+        },
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "185",
+            "destination_type": "queue",
+            "routing_key": "185",
+            "arguments": {}
+        },
+        {
+            "source": "router",
+            "vhost": "flooding",
+            "destination": "190",
+            "destination_type": "queue",
+            "routing_key": "190",
+            "arguments": {}
+        },
+    ]
+}

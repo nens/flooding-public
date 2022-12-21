@@ -1,0 +1,29 @@
+STDS id 'sd_KBR_1' nm 'Sobekbrug' ty 12 tb 3 rl -2.411 dl 5.6 si 'cd_KBR_1' li 0.25 lo 0.25 stds
+STDS id 'sd_KBR_2' nm 'Turtlebrug' ty 12 tb 2 pw 1.25 vf 0.88 rl -2.829 dl 1 li 0.25 lo 0.25 stds
+STDS id 'sd_KDU_1' nm 'Duiker_KDU_1' ty 10 tc 1 ll -1.73 rl -1.73 dl 59 si 'cd_KDU_1' li 0.37 lo 0.81 ov 0 tv 0 rt 0 stds
+STDS id 'sd_KDU_2' nm 'Duiker_KDU_2' ty 10 tc 1 ll -1.162 rl -1.797 dl 21.5 si 'cd_KDU_2' li 0.39 lo 0.79 ov 0 tv 0 rt 0 stds
+STDS id 'sd_KDU_3' nm 'Duiker_KDU_3' ty 10 tc 1 ll -1.62 rl -1.623 dl 3.6 si 'cd_KDU_3' li 0.42 lo 0.69 ov 0 tv 0 rt 0 stds
+STDS id 'sd_KDU_4' nm 'Duiker_KDU_4' ty 10 tc 1 ll -1.6 rl -1.6 dl 1 si 'cd_KDU_4' li 0.41 lo 0.83 ov 0 tv 0 rt 0 stds
+STDS id 'sd_KSY_1' nm 'Grondduiker' ty 10 tc 3 ll -2 rl -2.1 dl 5 si 'cd_KSY_1' li 0.45 lo 0.91 lb 0.29 ov 0 tv 0 rt 0 stds
+STDS id 'sd_KSY_2' nm 'Sifon' ty 10 tc 3 ll -1.83 rl -1.86 dl 30 si 'cd_KSY_2' li 0.48 lo 0.85 lb 1.21 ov 0 tv 0 rt 0 stds
+STDS id 'sd_KGM_1' nm 'Turtle' ty 9 dn 1 rt cr 0 1 0 ct lt 1 
+TBLE 
+0.4166667 -2.09 -2.15 0 0 <
+0.8333333 -2.07 -2.14 0 0 <
+0.9722222 -2.05 -2.13 0 0 <
+1.0416667 -2.03 -2.12 0 0 <
+tble stds
+STDS id 'sd_KGM_2' nm 'Nelen' ty 9 dn 1 rt cr 0 1 0 ct lt 1 
+TBLE 
+0.6666667 -2.49 -2.51 0 0 <
+1.3611111 -2.47 -2.5 0 0 <
+tble stds
+STDS id 'sd_KGM_3' nm 'Schuurmans' ty 9 dn 2 rt cr 0 1 0 ct lt 1 
+TBLE 
+0.7361111 0 0 2.25 2.3 <
+tble stds
+STDS id 'sd_KST_1' nm 'stuw_1' ty 6 cl -1.49 cw 0.95 ce 0.99 sc 1 rt 0 stds
+STDS id 'sd_KST_2' nm 'stuw_2' ty 6 cl -0.61 cw 0.47 ce 1.23 sc 1 rt 0 stds
+STDS id 'sd_KST_3' nm 'stuw_3' ty 6 cl -2.11 cw 0.23 ce 0.87 sc 1 rt 0 stds
+STDS id 'sd_KVD_1' nm 'Utrecht_1' ty 11 cl 0 ce 0.93 sv 0.667 si 'cd_PRO_11' rt 0 stds
+STDS id 'sd_KVD_2' nm 'Utrecht_2' ty 11 cl 0 ce 1.12 sv 0.667 si 'cd_PRO_12' rt 0 stds

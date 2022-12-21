@@ -1,0 +1,6 @@
+{
+"buildout_dir": "${buildout:directory}",
+"data_dir": "${buildout:directory}/var/pyramids",
+"blueprints": ["raster_server.wms"],
+"flooding_share": "//p-isilon-d1.external-nens.local/nens/flooding/flod-share/"
+}

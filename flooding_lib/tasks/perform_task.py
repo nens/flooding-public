@@ -1,0 +1,194 @@
+import os
+import logging  # , threading, time, datetime, random, math
+
+from flooding_lib.models import Scenario
+
+from django.conf import settings
+
+log = logging.getLogger('flooding-lib.perform_task')
+
+TASK_COMPUTE_RISE_SPEED_132 = 132
+TASK_COMPUTE_MORTALITY_GRID_134 = 134
+TASK_SOBEK_PYRAMID_GENERATION_150 = 150
+TASK_SOBEK_PRESENTATION_GENERATION_155 = 155
+TASK_SOBEK_EMBANKMENT_DAMAGE_162 = 162
+TASK_HISSSM_PYRAMID_GENERATION_180 = 180
+TASK_HISSSM_PRESENTATION_GENERATION_185 = 185
+TASK_CALCULATE_STATISTICS = 190
+TASK_GENERATE_EXPORT = 200  # See README.rst
+TASK_GENERATE_DATA_EXPORT = 201  # See README.rst
+TASK_PERFORM_3DI_SIMULATION_210 = 210  # See README.rst
+TASK_GENERATE_DATA_EXPORT = 201  # See README.rst
+TASK_3DI_PROCESS_IMPORTED_RESULT = 220
+
+
+def update_scenario_status_cache(scenario_id):
+    """
+    Update the scenario's status_cache to CALCULATED.
+    """
+    scenario = Scenario.objects.get(pk=scenario_id)
+    scenario.has_sobek_presentation = True
+    scenario.save()
+    scenario.update_status()
+
+
+def perform_task(body, tasktype_id, worker_nr, broker_logging_handler=None):
+    """
+    execute specific task
+    scenario_id  = id of scenario
+    tasktype_id  = id of tasktype (120,130,132)
+    worker_nr = number of worker (1,2,3,4,5,6,7,8). Used for temp
+    directory and sobek project.
+    broker_logging_handler = sends loggings to broker
+    """
+
+    scenario_type = body['scenario_type']
+    scenario_id = body['scenario_id']
+
+    #logging handler
+    if broker_logging_handler is not None:
+        log.addHandler(broker_logging_handler)
+    else:
+        log.warning("Broker logging handler does not set.")
+
+    #settings.py:
+    hisssm_root = settings.HISSSM_ROOT
+    sobek_program_root = settings.SOBEK_PROGRAM_ROOT  # e: or c:
+    #sobek_project_root = settings.SOBEK_PROJECT_ROOT
+    tmp_root = settings.TMP_ROOT
+
+    tmp_directory = os.path.join(tmp_root, str(worker_nr))
+    if not os.path.exists(tmp_directory):
+        os.mkdir(tmp_directory)
+
+    sobek_project_directory = os.path.join(
+         'lzfl_%03d.lit' % worker_nr)
+
+    try:
+        success_code = False
+        error_message = '-'
+        remarks = '-'
+
+        if tasktype_id == TASK_SOBEK_PYRAMID_GENERATION_150:
+            log.debug("execute TASK_SOBEK_PYRAMID_GENERATION_150")
+            from flooding_lib.tasks import pyramid_generation
+            pyramid_generation.set_broker_logging_handler(
+                broker_logging_handler)
+            remarks = ('pyramid_generation-' +
+                       pyramid_generation.__revision__ +
+                       ' uitvoerder: %02d/' % worker_nr)
+            success_code = pyramid_generation.sobek(
+                scenario_id, tmp_directory)
+
+        elif tasktype_id == TASK_COMPUTE_RISE_SPEED_132:
+            log.debug("execute TASK_COMPUTE_RISE_SPEED_132")
+            from flooding_lib.tasks import calculaterisespeed_132
+            calculaterisespeed_132.set_broker_logging_handler(
+                broker_logging_handler)
+            remarks = ('calculaterisespeed_132-' +
+                       calculaterisespeed_132.__revision__ +
+                       ' uitvoerder: %02d/' % worker_nr)
+            success_code = calculaterisespeed_132.perform_calculation(
+                scenario_id, tmp_directory)
+
+        elif tasktype_id == TASK_COMPUTE_MORTALITY_GRID_134:
+            log.debug("execute TASK_COMPUTE_MORTALITY_GRID_134")
+            from flooding_lib.tasks import calculatemortalitygrid_134
+            calculatemortalitygrid_134.set_broker_logging_handler(
+                broker_logging_handler)
+            remarks = ('calculatemortalitygrid_134-' +
+                       calculatemortalitygrid_134.__revision__ +
+                       ' uitvoerder: %02d/' % worker_nr)
+            success_code = calculatemortalitygrid_134.perform_calculation(
+                scenario_id, tmp_directory)
+
+        elif tasktype_id == TASK_SOBEK_PRESENTATION_GENERATION_155:
+            log.debug("execute TASK_SOBEK_PRESENTATION_GENERATION_155")
+            from flooding_lib.tasks import presentationlayer_generation
+            presentationlayer_generation.set_broker_logging_handler(
+                broker_logging_handler)
+            remarks = ('presentationlayer_generation-' +
+                       presentationlayer_generation.__revision__ +
+                       ' uitvoerder: %02d/' % worker_nr)
+            success_code = (
+                presentationlayer_generation.perform_presentation_generation(
+                    scenario_id, tasktype_id))
+            if success_code:
+                update_scenario_status_cache(scenario_id)
+
+        elif tasktype_id == TASK_HISSSM_PYRAMID_GENERATION_180:
+            log.debug("execute TASK_HISSSM_PYRAMID_GENERATION_180")
+            from flooding_lib.tasks import pyramid_generation
+            pyramid_generation.set_broker_logging_handler(
+                broker_logging_handler)
+            remarks = ('pyramid_generation-' +
+                       pyramid_generation.__revision__ +
+                       ' uitvoerder: %02d/' % worker_nr)
+            success_code = pyramid_generation.his_ssm(
+                scenario_id, tmp_directory)
+
+        elif tasktype_id == TASK_HISSSM_PRESENTATION_GENERATION_185:
+            log.debug("execute TASK_HISSSM_PRESENTATION_GENERATION_185")
+            from flooding_lib.tasks import presentationlayer_generation
+            presentationlayer_generation.set_broker_logging_handler(
+                broker_logging_handler)
+            remarks = ('presentationlayer_generation-' +
+                       presentationlayer_generation.__revision__ +
+                       ' uitvoerder: %02d/' % worker_nr)
+            success_code = (
+                presentationlayer_generation.perform_presentation_generation(
+                    scenario_id, tasktype_id))
+
+        elif tasktype_id == TASK_CALCULATE_STATISTICS:
+            from flooding_lib.tasks import calculate_scenario_statistics
+            calculate_scenario_statistics.calculate_statistics(scenario_id)
+            success_code = True  # In case of problems, an exception is raised
+
+        elif tasktype_id == TASK_GENERATE_EXPORT:
+            if scenario_type == 'flooding_exportrun':
+                from flooding_lib.tasks import calculate_export_maps
+                # Here scenario_id is an exportrun_id
+                calculate_export_maps.calculate_export_maps(scenario_id)
+                success_code = True  # In case of problems, an exception is raised
+            else:
+                log.error(
+                    ('Task not performed, because scenario_type is "%s"'
+                     ' (and not "flooding_exportrun")') %
+                    scenario_type)
+                success_code = False
+        elif tasktype_id == TASK_GENERATE_DATA_EXPORT:
+            if scenario_type == 'flooding_exportrun':
+                from flooding_lib.tasks import calculate_export_data
+                calculate_export_data.set_broker_logging_handler(
+                    broker_logging_handler)
+                # Here scenario_id is an exportrun_id
+                calculate_export_data.calculate_export_data(scenario_id)
+                success_code = True
+            else:
+                log.error(
+                    ('Task not performed, because scenario_type is "%s"'
+                     ' (and not "flooding_exportrun")') %
+                    scenario_type)
+                success_code = False
+        elif tasktype_id == TASK_3DI_PROCESS_IMPORTED_RESULT:
+            from flooding_lib.tasks import process_imported_3di_scenario
+            (success_code, remarks, error_message) = (
+                process_imported_3di_scenario.process_scenario(scenario_id))
+        else:
+            log.warning("selected a '%d' task but don't know what it is" %
+                        tasktype_id)
+            remarks = 'unknown task'
+
+        return success_code, remarks, error_message
+
+    except Exception, e:
+        from sys import exc_info
+        from traceback import format_tb
+        (this_exctype, this_value, this_traceback) = exc_info()
+
+        log.warning(''.join(['traceback: \n'] + format_tb(this_traceback)))
+
+        log.error("while executing task %s: '%s(%s)'" %
+                  (tasktype_id,  type(e), str(e)))
+
+        return False, remarks, '%s(%s)' % (type(e), str(e))

@@ -1,0 +1,45 @@
+[supervisord]
+childlogdir = {{ project_path }}/var/log
+logfile = {{ project_path }}/var/log/supervisord.log
+logfile_maxbytes = 50MB
+logfile_backups = 10
+loglevel = info
+pidfile = {{ project_path }}/var/supervisord.pid
+umask = 022
+nocleanup = false
+
+[inet_http_server]
+port = {{ supervisor_port }}
+username = sdfsdfsdf
+password = aosdifsdf
+
+[supervisorctl]
+serverurl = http://localhost:{{ supervisor_port }}
+username = sdfsdfsdf
+password = aosdifsdf
+
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
+{% if 'gunicorn' in supervisor_programs %}
+[program:gunicorn]
+command = /usr/local/bin/pipenv run gunicorn --bind=0.0.0.0:{{ gunicorn_port }} --workers={{ gunicorn_workers }} --timeout=90 --preload --max-requests={{ gunicorn_max_requests }} {{ package_name }}.wsgi
+process_name = gunicorn
+directory = {{ project_path }}
+priority = 10
+redirect_stderr = false
+autostart = true
+autorestart = true
+{% endif %}
+
+{% if 'celery' in supervisor_programs %}
+[program:celeryd]
+command = /usr/local/bin/pipenv run celery worker --app={{ package_name }} --concurrency={{ celery_concurrency }} --pidfile=var/celery.pid --loglevel=info --task-events
+process_name = celeryd
+directory = {{ project_path }}
+priority = 20
+stdout_logfile={{ project_path }}/var/log/celeryd.log
+stderr_logfile={{ project_path }}/var/log/celeryd.log
+autostart = true
+autorestart = true
+{% endif %}

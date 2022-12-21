@@ -1,0 +1,21 @@
+all:
+  vars:
+    build_user: buildout
+    project_slug: flooding
+    package_name: flooding
+    site_name: "flooding.lizard.net"
+    project_path: "/srv/flooding.lizard.net"
+    django_settings: "flooding.settings"
+    supervisor_port: 9202
+
+web:
+  hosts:
+    p-flod-ws-d1.external-nens.local
+  vars:
+    buildout_cfg: "production-web.cfg"
+
+task:
+  hosts:
+    p-flod-task-d5.external-nens.local
+  vars:
+    buildout_cfg: "production-task.cfg"

@@ -1,0 +1,16 @@
+STRU id 'KBR_1' nm 'Sobekbrug' dd 'sd_KBR_1' stru
+STRU id 'KBR_2' nm 'Turtlebrug' dd 'sd_KBR_2' stru
+STRU id 'KDU_1' nm 'Duiker_KDU_1' dd 'sd_KDU_1' stru
+STRU id 'KDU_2' nm 'Duiker_KDU_2' dd 'sd_KDU_2' stru
+STRU id 'KDU_3' nm 'Duiker_KDU_3' dd 'sd_KDU_3' stru
+STRU id 'KDU_4' nm 'Duiker_KDU_4' dd 'sd_KDU_4' stru
+STRU id 'KSY_1' nm 'Grondduiker' dd 'sd_KSY_1' stru
+STRU id 'KSY_2' nm 'Sifon' dd 'sd_KSY_2' stru
+STRU id 'KGM_1' nm 'Turtle' dd 'sd_KGM_1' ca 1 cj 'cd_KGM_1' cm 0 stru
+STRU id 'KGM_2' nm 'Nelen' dd 'sd_KGM_2' stru
+STRU id 'KGM_3' nm 'Schuurmans' dd 'sd_KGM_3' ca 1 cj 'cd_KGM_3' cm 0 stru
+STRU id 'KST_1' nm 'stuw_1' dd 'sd_KST_1' stru
+STRU id 'KST_2' nm 'stuw_2' dd 'sd_KST_2' ca 1 cj 'cd_KST_2' cm 0 stru
+STRU id 'KST_3' nm 'stuw_3' dd 'sd_KST_3' stru
+STRU id 'KVD_1' nm 'Utrecht_1' dd 'sd_KVD_1' stru
+STRU id 'KVD_2' nm 'Utrecht_2' dd 'sd_KVD_2' stru

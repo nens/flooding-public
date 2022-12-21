@@ -1,0 +1,40 @@
+<link href="{% url "root_url" %}static_media/style/legend.css" rel="stylesheet" type="text/css">
+
+{% if colormaps %}
+  {% if active_colormap %}
+    <script type="text/javascript">
+      if (dynamic_legend !== undefined && dynamic_legend.colormap === undefined) {
+          dynamic_legend.set_colormap("{{ active_colormap }}");
+      }
+    </script>
+  {% endif %}
+  <div class="colormapcontrol">Colormap:<br/>
+    <select class="colormap" id="changecolormap" onchange="dynamic_legend.set_colormap(this.value)">
+      {% for colormap in colormaps %}
+        <option value="{{ colormap.0 }}" {% if colormap.0 == active_colormap %}selected="selected"{% endif %}>{{ colormap.1 }}</option>
+      {% endfor %}
+    </select><br/>
+
+    {% if show_maxvalue %}
+      Maximale waarde:<br/>
+      <input type="text" class="colormap" value="{{ current_maxvalue }}" onchange="dynamic_legend.set_maxvalue(this.value)"/>
+      <input type="submit" value="OK" /> <!-- Dummy so that text input loses focus -->
+    {% endif %}
+  </div>
+{% endif %}
+
+<div class="legend-title">{{ title }}</div>
+<div class="legend">
+  <table class="legend-block">
+    <tbody>
+  {% for value, color in content %}
+      <tr>
+	<td class="legend-row-left" bgcolor="{{ color }}">
+	</td>
+	<td>
+	  {{ value }}
+	</td>
+      </tr>
+  {% endfor %}
+    </tbody>
+</div>

@@ -1,0 +1,26 @@
+[General]
+Version=2.20
+Date=June 1997
+
+[Options]
+3B=-1
+Precipitation=0
+Extern=0
+Sobek=-1
+Control=3B
+3Bformat=HIS
+Sbkformat=HIS
+Precipformat=HIS
+Extformat=HIS
+WriteRtcHisFiles=0
+UseReservoir=0
+
+[Control]
+
+[CouplingMatlab]
+MaxCountGeneral=100
+MaxCountStructures=15
+MaxCountNodes=50
+MaxCountReachSegments=50
+MaxCountBiLcLocations=30
+MaxCountMeasLocations=30

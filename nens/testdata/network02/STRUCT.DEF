@@ -1,0 +1,35 @@
+STDS id 'sd_KST-Q-24546' nm '' ty 6 cl -0.5 cw 0.78 ce 1 sc 1 rt 3  stds
+STDS id 'sd_KDU-Q-2067' nm -99999 ty 10 tc 1 ll -1.1900001 rl -1.22 dl 5.8000002 si 'cd_KDU-Q-2067' li 0.6 lo 0.8 ov 0 tv 0 rt 0       stds
+STDS id 'sd_KGM-Q-29132' nm '' ty 9 dn 1 rt cr 0 1 0 ct lt 1
+TBLE
+0.0666667 -0.8 -0.9 -9999 -9999 <
+tble       stds
+STDS id 'sd_KDU-Q-8313' nm '' ty 10 tc 1 dl 6 ll -1.28 rl -1.17 si '4' li 0.6 lo 0.8 lb 0 tv 0 '' ov 0 rt 0 hs 0 he 0  stds
+STDS id 'sd_KDU-Q-1633' nm -99999 ty 10 tc 1 dl 7.4 ll -1.15 rl -1.3 si '4' li 0.6 lo 0.8 lb 0 tv 0 '' ov 0 rt 0 hs 0 he 0  stds
+STDS id 'KDU-Q-2138zom' nm '' ty 6 cl -1.5 cw 10 ce 1 sc 1 rt 0  stds
+STDS id '1' nm '' ty 6 cl -0.5 cw 2 ce 1 sc 1 rt 0  stds
+STDS id 'sd_KDU-Q-8341' nm -99999 ty 10 tc 1 dl 17.5 ll -1.38 rl -1.38 si '5' li 0.6 lo 0.8 lb 0 tv 0 '' ov 0 rt 0 hs 0 he 0  stds
+STDS id 'sd_KDU-Q-8342' nm -99999 ty 10 tc 1 dl 8.7 ll -1.49 rl -1.35 si '5' li 0.6 lo 0.8 lb 0 tv 0 '' ov 0 rt 0 hs 0 he 0  stds
+STDS id 'sd_KDU-Q-1354' nm '' ty 10 tc 1 ll -1.8 rl -1.8 dl 5.5 si '6' li 0.6 lo 0.8 ov 0 tv 0 rt 0  stds
+STDS id 'sd_KDU-Q-8340' nm -99999 ty 10 tc 1 ll -1.2 rl -1.2 dl 7 si 'cd_KDU-Q-8340' li 0.6 lo 0.8 ov 0 tv 0 rt 0       stds
+STDS id 'sd_KDU-Q-1421' nm '' ty 9 dn 2 rt cr 0 1 0 ct lt 1
+TBLE
+0.0002778 -9999 -9999 -0.6 -0.55 <
+tble       stds
+STDS id 'KDU-Q-2146zom' nm '' ty 6 cl -1.5 cw 10 ce 1 sc 1 rt 0  stds
+STDS id 'KDU-Q-2146' nm '' ty 6 cl -0.5 cw 2 ce 1 sc 1 rt 0  stds
+STDS id 'sd_KDU-Q-1355' nm -99999 ty 10 tc 1 ll -1.53 rl -1.4299999 dl 6.6999998 si 'cd_KDU-Q-1355' li 0.6 lo 0.8 ov 0 tv 0 rt 0       stds
+STDS id 'sd_KDU-Q-8338' nm -99999 ty 10 tc 1 ll -1.58 rl -1.66 dl 9.3000002 si 'cd_KDU-Q-8338' li 0.6 lo 0.8 ov 0 tv 0 rt 0       stds
+STDS id 'sd_KDU-Q-1570' nm -99999 ty 10 tc 1 ll -1.28 rl -1.28 dl 7 si 'cd_KDU-Q-1570' li 0.6 lo 0.8 ov 0 tv 0 rt 0       stds
+STDS id 'sd_KDU-Q-8339' nm -99999 ty 10 tc 1 ll -1.11 rl -1.28 dl 7 si 'cd_KDU-Q-8339' li 0.6 lo 0.8 ov 0 tv 0 rt 0       stds
+STDS id 'sd_KDU-Q-8343' nm -99999 ty 10 tc 1 dl 10 ll -1.5 rl -1.5 si '7' li 0.6 lo 0.8 lb 0 tv 0 '' ov 0 rt 0 hs 0 he 0  stds
+STDS id 'sd_KDU-Q-2068' nm -99999 ty 10 tc 1 ll -1.3099999 rl -1.3200001 dl 5.4000001 si 'cd_KDU-Q-2068' li 0.6 lo 0.8 ov 0 tv 0 rt 0       stds
+STDS id 'KDU-Q-2138win' nm '' ty 6 cl -1.5 cw 10 ce 1 sc 1 rt 0  stds
+STDS id 'KDU-Q-2138a' nm '' ty 6 cl -0.85 cw 2 ce 1 sc 1 rt 0  stds
+STDS id 'KDU-Q-2146win' nm '' ty 6 cl -1.5 cw 10 ce 1 sc 1 rt 0  stds
+STDS id '2' nm '' ty 6 cl -0.85 cw 2 ce 1 sc 1 rt 0  stds
+STDS id 'sd_KBR-Q-769' nm -99999 ty 12 tb 3 rl -1.47 dl 7.8 si 'cd_KBR-Q-769' li 0.25 lo 0.25       stds
+STDS id '24' nm '' ty 9 dn 1 rt cr 0 1 0 ct lt 1
+TBLE
+ 0.6833333 -1 -1.1 0 0 <
+tble stds

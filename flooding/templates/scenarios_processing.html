@@ -1,0 +1,87 @@
+{% extends "lizard/base.html" %}
+{% load utils %}
+{% load i18n %}
+
+{% block title %}
+Flooding: {% trans 'Execute scenarios' %}
+{% endblock %}
+
+{% block content %}
+<script type="text/javascript" src="{% url "root_url" %}static_media/weblib/jquery/jquery-1.3.2.min.js"></script>
+<script>
+function submitForm(form_id) {
+    var form = $('#' + form_id);
+    $.ajax({
+           type:'POST',
+           url: "{% url "execute_scenario" %}",
+           dataType: "json",
+           data:form.serialize(),
+           success: function(data){
+               $("#action_message").text(data.message);
+           }
+    });
+    return false;
+}
+</script>
+
+<h2>Scenarios processing overzicht</h2>
+<p />
+<h4 id='action_message'></h4>
+<table>
+    <thead>
+      <th></th>
+      <th>Scenario id</th>
+      <th>Scenario naam</th>
+      <th>Uitvoeringen</th>
+      <th>Workflow template</th>  
+      <th>Status</th>
+      <th>DT verstuurd</th>
+      <th>DT start</th>
+      <th>DT eind</th>
+      <th>Laatste logging</th>
+    </thead>
+    <tbody>
+      {% for process in processing %}
+      <tr>
+	<td>
+          <form id="{{process.scenario_id }}" action="POST" onsubmit="return submitForm({{ process.scenario_id }});">{% csrf_token %}
+	    <input type="hidden" name="scenario_id" value="{{ process.scenario_id }}" />
+	    <input type="hidden" name="template_id" value="{{ process.template_id }}" />
+	    <input type="hidden" name="template_code" value="{{ process.template_code }}" />
+            <input type="submit" name="action"  value="start" />
+	  </form>
+	</td>
+        <td><a href="{{ process.workflow.get_absolute_url_tasks }}">
+	    {{ process.scenario_id }}
+	    </a>
+	</td>
+	<td>{{ process.scenario_name }}</td>
+	<td><a href="{{ process.workflow.get_absolute_url_scenario }}">
+	    {{ process.workflows_count }}
+	    </a>
+	</td>
+	<td>{{ process.template_code }}</td>
+	<td>{{ process.workflow.get_status }}</td>
+	<td>{{ process.workflow.tcreated }}</td>
+	<td>{{ process.workflow.tstart }}</td>
+	<td>{{ process.workflow.get_tfinished }}</td>
+	<td><a href="{{ process.workflow.get_absolute_url_logging }}">
+	    {{ process.workflow.latest_log }}
+	    </a>
+	</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
+
+<p />
+<table><tr>
+{% for i in steps %}
+{% if i != step %}
+ <td><a href='/scenarios_processing/step/{{ i }}'>{{ i }}</a></td>
+{% else %}
+ <td>{{ i }}</td>
+{% endif %}
+{% endfor %}
+</tr></table>
+{% endblock %}

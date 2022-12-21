@@ -1,0 +1,173 @@
+[
+  {
+    "pk": 6,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "fewsMap",
+      "key": "STARTER_SUBAPPLICATION"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "Wordt ingevuld in:\r\n  appManager.selectApp(4,2);",
+      "value": "fews",
+      "key": "STARTER_APPLICATION"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "static_media/images/lizard_webinterface_favicon2.ico",
+      "key": "URL_FAVICON"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "c:\\temp\\resultaten\\flow",
+      "key": "flow_result_dir"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "d:\\\\django\\\\import sheet mis version 1 28 okt 2009.xls",
+      "key": "MIS_EXCELSHEET_FOR_IMPORTTOOL"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "static_media/images/lizard3/bg_top.png",
+      "key": "URL_TOPBAR"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "c:\\temp_csv_files",
+      "key": "EXPORT_FOLDER"
+    }
+  },
+  {
+    "pk": 20,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "0",
+      "key": "RESTRICTMAP"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "1",
+      "key": "USE_OPENSTREETMAPS"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "1",
+      "key": "USE_GOOGLEMAPS"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "media/attachments/setting/14/logo_lizard_.png",
+      "key": "URL_LOGO"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "",
+      "key": "GOOGLEMAPS_KEY"
+    }
+  },
+  {
+    "pk": 19,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "\\\\p-flod-fs-00-d1.external-nens.local\\flod-share\\Flooding\\filedatabase",
+      "key": "SOURCE_DIR"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "\\\\p-flod-fs-00-d1.external-nens.local\\flod-share\\Flooding\\filedatabase",
+      "key": "source_dir"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "\\\\192.168.1.97\\ = testpc09\r\n194.105.129.232 = Lizardreken-02",
+      "value": "\\\\p-flod-fs-00-d1.external-nens.local\\flod-share\\Flooding\\test_database\\resultaten",
+      "key": "destination_dir"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "\\\\p-flod-fs-00-d1.external-nens.local\\flod-share\\Flooding\\test_database\\presentationdatabase",
+      "key": "presentation_dir"
+    }
+  },
+  {
+    "pk": 18,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "testpc09 = 192.168.1.97\r\nLizardreken-02 = 194.105.129.232",
+      "value": "\\\\p-flod-fs-00-d1.external-nens.local\\flod-share\\Flooding\\test_database\\resultaten",
+      "key": "DESTINATION_DIR"
+    }
+  },
+  {
+    "pk": 21,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": "",
+      "value": "\\\\p-flod-fs-00-d1.external-nens.local\\flod-share\\Flooding\\test_database\\presentationdatabase",
+      "key": "PRESENTATION_DIR"
+    }
+  },
+  {
+    "pk": 22,
+    "model": "flooding_base.setting",
+    "fields": {
+      "remarks": null,
+      "value": "2008",
+      "key": "YEAR"
+    }
+  }
+]

@@ -1,0 +1,24 @@
+Base of app is in lizard_base/static/scrips/flooding/app.js
+
+Het 'scenario details' template is
+flooding_lib/templates/flooding/infowindow_information.html
+
+De view is infowindow_information in flooding_lib/views_infowindow.py
+
+De URL is waarschijnlijk van de vorm /flooding/infowindow/?action=information
+
+De URL name is infowindow
+
+Javascript roept dit aan in flooding_base/static/scripts/flooding/results/infoWindow.js
+
+
+
+De import scenario's gaan naar de "echte" database in de view
+import_scenario_into_flooding() in
+flooding_lib/tools/importtool/views.py .
+
+In de importtool InputFields is aangegeven hoe ze opgeslagen moeten
+worden, welke tabel en welk veld.
+
+Bij ExtraFields bestaat een vinkje, of ze getoond moeten worden in de
+interface of niet.

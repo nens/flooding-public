@@ -1,0 +1,44 @@
+GLFR id 0 BDFR id '0' ci '0' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6 sf 7 st cp 0 30 0 sr cp 0 30 bdfr  glfr
+BDFR id '1' ci '1' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '2' ci '2' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '3' ci '3' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '4' ci '4' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '5' ci '5' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '6' ci '6' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '7' ci '7' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '8' ci '8' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '9' ci '9' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '10' ci '10' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '11' ci '11' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '12' ci '12' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '13' ci '13' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '14' ci '14' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '15' ci '15' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '16' ci '16' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '17' ci '17' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '18' ci '18' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '19' ci '19' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '22' ci '22' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '23' ci '23' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '24' ci '24' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '25' ci '25' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '26' ci '26' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '27' ci '27' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '28' ci '28' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '29' ci '29' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '20' ci '20' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+BDFR id '21' ci '21' mf 7 mt cp 0 23 0 mr cp 0 23 0 s1 6 s2 6       bdfr
+STFR id 'fr_KDU-Q-2067' ci 'sd_KDU-Q-2067' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'sd_KDU-Q-8313' ci 'sd_KDU-Q-8313' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KDU-Q-1633' ci 'sd_KDU-Q-1633' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KDU-Q-8341' ci 'sd_KDU-Q-8341' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KDU-Q-8342' ci 'sd_KDU-Q-8342' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'sd_KDU-Q-1354' ci 'sd_KDU-Q-1354' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KDU-Q-8340' ci 'sd_KDU-Q-8340' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KDU-Q-1355' ci 'sd_KDU-Q-1355' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KDU-Q-8338' ci 'sd_KDU-Q-8338' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KDU-Q-1570' ci 'sd_KDU-Q-1570' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KDU-Q-8339' ci 'sd_KDU-Q-8339' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KDU-Q-8343' ci 'sd_KDU-Q-8343' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KDU-Q-2068' ci 'sd_KDU-Q-2068' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr
+STFR id 'fr_KBR-Q-769' ci 'sd_KBR-Q-769' mf 3 mt cp 0 75 0 mr cp 0 75 0 s1 6 s2 6 sf 3 st cp 0 75 0 sr cp 0 75 stfr

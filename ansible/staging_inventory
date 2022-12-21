@@ -1,0 +1,14 @@
+all:
+  vars:
+    build_user: buildout
+    project_slug: flooding
+    package_name: flooding
+    site_name: "flooding.staging.lizard.net"
+    project_path: "/srv/flooding.staging.lizard.net"
+    django_settings: "flooding.stagingsettings"
+    buildout_cfg: "staging.cfg"
+    supervisor_port: 9202
+
+web:
+  hosts:
+    s-flod-ws-d1.external-nens.local

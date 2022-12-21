@@ -1,0 +1,91 @@
+# Goal: do the root-related basic provisioning for a site (now: only this
+# server). A buildout user is set up with ssh keys so that the relevant devs
+# can ssh in as user buildout, which will be used by the deploy.yml script.
+---
+- name: provision server to prepare for the actual deployment
+  hosts: all
+  become: yes
+  tasks:
+
+    - name: Add build user "{{ build_user }}" and set an unusable password.
+      user:
+        name: "{{ build_user }}"
+        password: '*'
+        state: present
+        shell: "/bin/bash"
+        groups: ''  # ensuring buildout is not a member of the sudo group
+        append: no  # append=yes would make groups='' ineffective
+
+    - name: Grant "{{ build_user }}" permission to reload nginx
+      lineinfile:
+        path: /etc/sudoers.d/buildout
+        line: "buildout ALL= NOPASSWD: /usr/sbin/service nginx *"
+        validate: /usr/sbin/visudo -cqf %s
+        create: yes
+        mode: 0440
+
+    - name: "Add maintainers' ssh keys so they can log in as the build user."
+      authorized_key:
+        user: "{{ build_user }}"
+        key: https://github.com/{{ item }}.keys
+      with_items:
+        - byrman
+        - remcogerlich
+        - arjanverkerk
+
+    - name: Install apt packages.
+      apt:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - git
+        - python-dev
+        - python-gdal
+        - python-mapnik2
+        - python-psycopg2
+        - python-tk
+        - libfreetype6-dev
+        - pkg-config
+        - tzdata
+        - zip
+
+    - name: Install / upgrade setuptools
+      pip:
+        name: setuptools
+        state: latest
+
+    - name: Install / upgrade pip
+      pip:
+        name: pip
+        state: latest
+
+    - name: Install / upgrade buildout
+      pip:
+        name: zc.buildout
+        state: latest
+
+    - name: Create the project path.
+      file:
+        path: "{{ project_path }}"
+        state: directory
+        mode: 0755
+        owner: "{{ build_user }}"
+        group: "{{ build_user }}"
+
+    - name: Check whether nginx config exists
+      stat: path={{ project_path }}/etc/{{ site_name }}.nginx.conf
+      register: nginx_conffile
+      when: inventory_hostname in groups['web']
+
+    - name: Symlink and enable nginx config, when available.
+      file:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        state: link
+        force: yes
+      with_items:
+      - { src: "{{ project_path }}/etc/{{ site_name }}.nginx.conf" , dest: "/etc/nginx/sites-available/{{ site_name }}.nginx.conf" }
+      - { src: "/etc/nginx/sites-available/{{ site_name }}.nginx.conf", dest: "/etc/nginx/sites-enabled/{{ site_name }}.nginx.conf" }
+      when:
+      - inventory_hostname in groups['web']
+      - nginx_conffile.stat.exists

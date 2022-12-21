@@ -1,0 +1,8 @@
+GLIN id '0' fi 0 fr 'null' 
+FLIN id '-1' nm 'null' ci '-1' q_ lq 0 0 ty 1 lv ll 0 0 flin glin
+FLIN id 'WL_6' nm 'watergang_6' ci 'WL_6' q_ lq 0 0.11 ty 1 lv ll 0 -1.45 flin
+FLIN id 'WL_3' nm 'watergang_3' ci 'WL_3' q_ lq 0 0.23 ty 1 lv ll 0 -1.13 flin
+FLIN id 'WL_1' nm 'watergang_1' ci 'WL_1' q_ lq 0 0.34 ty 1 lv ll 0 -1.25 flin
+FLIN id 'WL_2' nm 'watergang_2' ci 'WL_2' q_ lq 0 0.45 ty 1 lv ll 0 -1.83 flin
+FLIN id 'WL_5' nm 'watergang_5' ci 'WL_5' q_ lq 0 0.56 ty 0 lv ll 0 0.35 flin
+FLIN id 'WL_4' nm 'watergang_4' ci 'WL_4' q_ lq 0 0.67 ty 0 lv ll 0 0.57 flin

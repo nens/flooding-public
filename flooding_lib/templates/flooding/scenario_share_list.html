@@ -1,0 +1,69 @@
+{% extends "lizard/base.html" %}
+{% load utils %}
+{% load i18n %}
+
+{% block title %}
+Flooding: {% trans 'Share scenarios' %}
+{% endblock %}
+
+{% block content %}
+<script type="text/javascript" src="{% url "root_url" %}static_media/weblib/jquery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="{% url "root_url" %}static_media/flooding_lib/share_scenarios.js"></script>
+
+<h1>{% trans 'Share scenarios' %}</h1>
+
+	<div  style="overflow:auto">
+	{% for project, scenarios in projects %}
+          <h2>{{ project.name }}</h2>
+          <table>
+	    <thead>
+              <th>Regio</th>
+              <th>Bres</th>
+              <th>Scenarionaam</th>
+              <th>Status</th>
+	      {% for projectid, projectname in otherprojects %}
+	      <th>{{ projectname }}</th>
+              {% endfor %}
+            </thead>
+	    {% for scenario in scenarios %}
+            <tr>
+              <td>{{ scenario.scenario.breaches.all.0.region }}</td>
+              <td>{{ scenario.scenario.breaches.all.0 }}</td>
+	      <td>{{ scenario.scenario.name }}</td>
+	      <td>{{ scenario.scenario.get_status_cache_display }}</td>
+	      {% for extrafield in scenario.extra_fields %}
+              {% if scenario.scenario.is_approved %}
+	      <td class="shareaction"
+		  data-scenario-id="{{ extrafield.scenario_id }}"
+		  data-project-id="{{ extrafield.project_id }}"
+		  data-action="{{ extrafield.action }}"
+		  >
+                {% if extrafield.is_url %}
+		<a href="#">{{ extrafield.message }}</a>
+                {% else %}
+                {{ extrafield.message }}
+                {% endif %}
+                {% if extrafield.approvalobject %}
+                  <ul style="background: lightblue; margin: 0; padding: 0">
+		  {% for state in extrafield.approvalobject.states %}
+                  <li style="font-size: 80%; list-style-type: none; margin-left: 1em">
+		    {{ state.approvalrule.name }}: {{ state.successful_string }}
+                  {% if state.remarks %}
+                    ({{state.remarks}})
+                  {% endif %}
+		  </li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+	      </td>
+              {% else %}
+              <td></td>
+              {% endif %}
+	      {% endfor %}
+            </tr>
+	    {% endfor %}
+	  </table>
+        {% endfor %}
+	</div>
+
+{% endblock %}

@@ -1,0 +1,1447 @@
+Changelog of flooding
+===================================================
+
+
+1.97 (unreleased)
+-----------------
+
+- Change settings from Isilon to 3PAR.
+
+
+1.96 (2019-05-10)
+-----------------
+
+- Pin flooding_lib to 5.0.4
+
+- Ping nens to 1.13
+
+- Import dir moved from var/media to /mnt/flod-share/import
+
+- Excel dir moved from var/excel to /mnt/flod-share/excel
+
+- Edit help file.
+
+- Update raven
+
+- Added Celery, violently dragging Flooding into 2013.
+
+- Let Celery run on the webserver because it needs to interact
+  with files on the webserver (process uploaded group imports).
+
+- Add a cron job to clean the /tmp dir on the task server
+
+
+1.95.1 (2014-04-11)
+-------------------
+
+- Nothing changed yet.
+
+
+1.95 (2014-04-11)
+-----------------
+
+- Add language settings.
+- Remove 3di tasks from recipe of supervisor
+- Remove references to raster-server, because it's a part of
+  flooding-lib now.
+
+1.94 (2014-02-10)
+-----------------
+
+- Add task 150, 180 to production-task-200.cfg
+
+- Set paths to new share in settings.py.
+
+1.93 (2014-01-29)
+-----------------
+
+- Put right branches of gislib and rasterserver into buildout config.
+
+
+1.92 (2013-10-11)
+-----------------
+
+- Netcdf4 needs to be pinned at 1.0.4, incompatibility.
+
+
+1.91 (2013-10-09)
+-----------------
+
+- Add settings for ror-wateren and ror-keringen
+- Disable GZipMiddleware.
+- Add path to mkdir recipe
+
+
+1.90 (2013-09-09)
+-----------------
+
+- Updates:
+    flooding-base to 1.40
+      - Update smartclient to v9.0.
+      - Add speed control button for animations
+    flooding-lib to 2.92
+      - Update templates to use smartclient v9.0.
+
+
+1.89 (2013-08-14)
+-----------------
+
+- Updates
+    flooding-base to 1.38
+        Set projection to maplayer in config.js.
+
+
+1.88 (2013-07-16)
+-----------------
+
+- Fix supervisor task call.
+
+
+1.87 (2013-07-16)
+-----------------
+
+- Scedule tasks calculate_province_statistics_cronjob to run at 6:01 and
+  create_province_excel_script at 6:30 daily.
+
+
+1.86 (2013-07-15)
+-----------------
+
+- Unpinned flooding-lib. We got tired of keeping it up to date and
+  updating these CHANGES. See the latest version of flooding-lib.
+
+
+1.85 (2013-07-12)
+-----------------
+
+- Updates
+    flooding-lib to 2.87
+        - Cache the province a Scenario belongs to. Cache a province's
+          scenario statistics.
+	- Correctly create ROR approval Excel sheets for each province.
+        - Don't generate them from the view if they already exist.
+        - (In flooding) call the script each hour.
+	- Fix error 'To many open files' by exporttool.
+
+    flooding-base to 1.38
+        - Fix OpenStreetMap layer.
+
+1.84.2 (2013-07-10)
+-------------------
+
+- Nothing changed yet.
+
+
+1.84.1 (2013-07-10)
+-------------------
+
+- Fix typo in supervisor command name
+
+
+1.84 (2013-07-10)
+-----------------
+
+- Flooding-lib to 2.86 for:
+    - Correctly create ROR approval Excel sheets for each province.
+    - Don't generate them from the view if they already exist.
+- Call the ROR Excel script every hour
+
+
+
+1.83 (2013-07-08)
+-----------------
+
+- Flooding-lib to 2.85: added some caches to speed up the ROR
+  dashboard page.  Also added a cronjob that runs every hour, using
+  supervisor to make sure it doesn't start overlapping with itself.
+
+
+1.82 (2013-07-03)
+-----------------
+
+- Updates
+    flooding-lib to 2.84
+        - Add field 'initialcrest' to ScenarioBreach models
+          for import functionality.
+
+1.81 (2013-07-02)
+-----------------
+
+- Updates
+    flooding-lib to 2.83
+        - Fix script calc.py for defining 'waterstandswerloop' points.
+
+1.80 (2013-06-20)
+-----------------
+
+- Updates
+    flooding-lib to 2.82
+        - Set permission check on editing of export_run.
+
+
+1.79 (2013-06-18)
+-----------------
+
+- Updates
+    flooding-lib to 2.80, 2.81
+        - Add functionality to manage initial_level for openbreach task
+        - Override filse in model.zip for openbreach task
+        - Check with pep8
+        - Fix tests
+    flooding-base to 1.37
+        - Fix bug in NGeneral.js
+
+
+1.78 (2013-06-12)
+-----------------
+
+Updates
+    flooding-base to 1.36
+        - Extended intervalFormatter to use an interval > 30 days.
+
+
+1.77 (2013-05-21)
+-----------------
+
+- Extend request's timout to 600 sec. due error on 'flooding/shared/ror/'.
+
+
+1.76 (2013-05-16)
+-----------------
+
+- Updates
+    flooding-lib to 2.79
+        - Close gdal dataset properly for exporttool.
+
+
+1.75 (2013-05-16)
+-----------------
+
+- Updates
+    flooding-lib to 2.78
+        - Completed implementation of 'edit' functionality for export tool.
+
+
+1.74 (2013-05-15)
+-----------------
+
+- Updates
+    flooding-lib to 2.77
+        - Revrite calculate_export_maps script to reduce memory usage.
+        - Add functionality to edit exports (partly implemented).
+
+1.73 (2013-05-07)
+-----------------
+
+- Updates
+    flooding-lib to 2.74, 2.75
+        - Remove creating .csv and .txt files on creating a new ror-export.
+        - Use gtiff driver in place of mem to reduce memeory usage for
+          ror-export calc
+
+
+1.72 (2013-05-07)
+-----------------
+
+- New versions of example groupimport Excel sheets.
+
+
+1.71 (2013-04-22)
+-----------------
+
+- Updates
+    flooding-lib to 2.74, 2.75
+        - Define transparency for all values that less
+          then the lowest leftbound.
+        - Import simplejson form django.utils
+
+
+1.70 (2013-04-17)
+-----------------
+
+- Updates
+    flooding-lib to 2.73:
+        - Removed import unicode_literals from presentationlayer_generation.py
+          due problem with gdal.
+
+
+1.69 (2013-04-15)
+-----------------
+
+- Updates
+    flooding-lib to 2.72:
+        - Set max_uncompressed_zip_size to None for removing comment line
+  	  from zips > 1GB.
+
+
+1.68 (2013-04-09)
+-----------------
+
+- Updates
+    flooding-lib to 2.71:
+        - Fix bug in png_generation task by selecting colormapping.
+
+
+1.67 (2013-04-09)
+-----------------
+
+- Updates
+    flooding-lib to 2.70
+        - Delete gdal's dataset to reduce memory usage
+          for ror-export task.
+
+
+1.66 (2013-04-09)
+-----------------
+
+- empty release.
+
+
+1.65 (2013-04-08)
+-----------------
+
+- Repaire fabfile.cfg.
+
+
+1.64 (2013-04-08)
+-----------------
+
+- Updates
+    flooding-lib to 2.69:
+        - More encoding fixes in exporttool.
+
+
+1.63 (2013-04-08)
+-----------------
+
+- Updates
+    flooding-lib to 2.68:
+        - Fix encoding error in exporttool.
+
+
+1.62 (2013-04-08)
+-----------------
+
+- Updates
+    flooding-lib to 2.67:
+        - Fix problem by ror-export on creating a gdal's driver.
+
+
+1.61 (2013-04-08)
+-----------------
+
+- Updates
+    flooding-lib to 2.66:
+        - Fix bug with empty gridmaxwaterdepth.zip, task spaw #1
+
+
+1.60 (2013-04-04)
+-----------------
+
+- Updates
+  flooding-lib to 2.65:
+     - Fix bugs with calculating the extent in util.geo.GeoImage
+       (flooding #5).
+
+
+
+1.59 (2013-03-28)
+-----------------
+
+- Updates
+    flooding-lib to 2.63, 2.64
+        - Reduce loding export scenarios.
+        - Format datetime string in eexport_run overview.
+        - Set new filename for export zip.
+        - Add scenarios list to meta.json for ROR export.
+        - Add export filepath to meta.json for ROR export.
+        - Extend meta file for ROR exporttool.
+        - Reduce memory usage in function to find max_array for ROR exporttool.
+        - Extend Export run details overview.
+
+
+1.58 (2013-03-26)
+-----------------
+
+- Updates
+    flooding-lib to 2.62
+      - Fix error by missed zipfile for export ROR maps.
+      - Fix error by corrupted zipfile for export ROR maps.
+      - Reduce memory usage in exporttool.
+
+
+1.57 (2013-03-25)
+-----------------
+
+- Update nginx.config.in, add timeout.
+
+
+1.56 (2013-03-25)
+-----------------
+
+- Updates
+    flooding-lib to 2.61
+      - Fix error on crreating export ROR maps.
+      - Add meta data to export zipfile for ROR.
+
+
+1.55 (2013-03-04)
+-----------------
+
+- Updates
+    flooding-lib to 2.60
+        - Fix formating filenames in task 155.
+    lizard-worker to 0.13
+        - Fix formating message's body.
+
+
+1.54 (2013-02-26)
+-----------------
+
+Update to 2.59:
+- Hopefully fix a UTF8 error where the code didn't expect non-ASCII in
+  users' full names.
+
+
+1.53 (2013-02-18)
+-----------------
+
+Update flooding-lib to 2.57, 2.58:
+    - Colormap leftbounds should be exclusive.
+    - Always use a project's colormap, if available.
+
+
+1.52 (2013-01-25)
+-----------------
+
+Update flooding-lib to 2.56
+    - Remove comment line in .asc files for task spawn (130).
+    - Refactor script spawn.py.
+    - Add tests for spawn.py.
+
+
+1.51 (2013-01-23)
+-----------------
+
+Updates flooding-lib to 2.55:
+    - Rewrite png_generation script to use numpy and gdal instead of the
+      nens.asc libraries.
+    - Reorganize tests.
+    - Change 'temporarily_unzipped' so that it can use alternative temp
+      directories, and optionally not rezip any changed files.
+    - Fix issues for running the png_generation under Windows.
+
+
+1.50 (2013-01-14)
+-----------------
+
+Updated flooding-lib to 2.54:
+- Fix a bug where the importtool tries to convert everything into
+  ASCII without reason.
+
+
+1.49.5 (2012-12-24)
+-------------------
+
+- Fix frame's width by Table, Importeren, Exporteren.
+
+- Updated flooding-lib to 2.52, 2.53
+    - Fix 'Export run details' overview.
+    - Add the loading message for exporttool.
+
+
+1.49.4 (2012-12-20)
+-------------------
+
+- Task 200 has more error handling.
+
+
+1.49.3 (2012-12-19)
+-------------------
+
+- Export run now starts workflow template with code 4 (instead of 3).
+
+
+1.49.2 (2012-12-19)
+-------------------
+
+- Updated export run: you can now select different sized grids as input.
+
+
+1.49.1 (2012-12-17)
+-------------------
+
+- Updated task 222.
+
+
+1.49 (2012-12-17)
+-----------------
+
+- Add new versions of the Groupimport example sheets.
+
+- Flooding-lib to 2.48.1:
+  Added creating ScenarioBreach when creating 3Di scenario. This
+  ScenarioBreach is dummy, but it is needed by various flooding components.
+
+  Using objects.get() instead of get() in Scenario.set_value_for_inputfield;
+  prevents an error in some cases with uploading Excel sheets.
+
+
+1.48.2 (2012-12-17)
+-------------------
+
+- Pinned threedi 0.6 for auto detect png resolution.
+
+
+1.48.1 (2012-12-17)
+-------------------u
+
+- Unpinned django 1.4.1.
+
+
+1.48 (2012-12-17)
+-----------------
+
+- Pinned flooding-lib 2.48:
+  - Added Create 3Di scenario
+  - Added task 222 (variation of 220, 221)
+
+
+1.47 (2012-12-11)
+-----------------
+
+- Added task machine for production server.
+
+- Fixed error in 'scenarios_processing' overview by scenario's without
+  a workflow_template.
+
+- Update
+  lizard-worker to 0.10:
+    - Added 'description' field to WorkflowTemplate model
+    - Set to unique 'code' field in WorkflowTemplate model
+    - Added workflow template code for 3di en export
+  flooding-base to 1.34:
+    - Added functionality to use a 3di form on creating 3di scenario.
+  flooding-lib to 2.47
+    - Removed dependencies on ThreediModel and ThreediCalculation, everything is
+      in Scenario, SobekModel now. Updated task 210, 220.
+    - Pinnend to lizard-worker >= 0.10, flooding-base >= 1.34
+    - Added datamigration schema to create a new workflowtemplates
+      for 3di en export maps.
+    - Added functionality to create a 3di scenario.
+
+
+1.46 (2012-12-03)
+-----------------
+
+- Update flooding-lib to 2.44, 2.45:
+
+    Update status_cache after task 155 (TASK_SOBEK_PRESENTATION_GENERATION).
+    Remove "has_hsssm_presentation" field from Scenario model.
+    Fixed error in exporttool by mapping filepath.
+
+
+1.45 (2012-12-03)
+-----------------
+
+- Set unique to worker_nr in production_task_200.cfg and staging_task_200.cfg.
+- Chenge loggin leven to INFO for task_workers in production_task_200.cfg
+  andstaging_task_200.cfg
+
+- Update flooding-lib to 2.43:
+
+    Fixed error by mapping filepath in exporttool.
+
+
+1.44 (2012-11-29)
+-----------------
+
+- Update flooding-lib to 2.43:
+
+  Approval of an import scenario tried to save the state of approval
+  checkboxes for each individual inputfield, but those don't exist
+  anymore. This led to an error. Changed the function so that in this
+  scenario a value of "True" for the approval is saved.
+
+
+
+1.43.3 (2012-11-28)
+-------------------
+
+- Update flooding-lib to 2.42:
+    - Set translation to _lazy.
+
+
+1.43.2 (2012-11-27)
+-------------------
+
+- Updated flooding-lib to 2.41:
+    - Updated translation's strings
+    - Added options to export maps
+
+
+1.43.1 (2012-11-27)
+-------------------
+
+- Added task_221 to supervisor settings.
+
+
+1.43 (2012-11-27)
+-----------------
+
+- Updated for task 221.
+
+
+1.42 (2012-11-26)
+-----------------
+
+lizard-worker to 0.9:
+    - Remove amqp-logging-handler from action object after executing of workflow, task.
+    - Pinned to pika >= 0.9.8
+
+
+1.41 (2012-11-23)
+-----------------
+
+flooding-lib to 2.37:
+    - Fix problem by the starting a new sceanrio on import.
+    - Add checkboxfields to select maps for exporttool.
+
+
+1.40 (2012-11-22)
+-----------------
+
+flooding-lib to 2.36:
+On the breachinfo page:
+- Removed the inundation volume statistic (wasn't used according to
+  Kymo)
+- Added an Excel download link, which results in the same data as an
+  Excel file
+
+
+1.39 (2012-11-21)
+-----------------
+
+flooding-lib to 2.35:
+    remove special treatment of "missing" scenario
+    metadata values like -999 and 999
+
+
+1.38 (2012-11-21)
+-----------------
+
+flooding-lib to 2.34:
+    set all types of exporttool ExportRun to default True
+
+
+1.37 (2012-11-20)
+-----------------
+
+Updates:
+    flooding-lib to 2.32, 2.33.
+        - Added functionality to filter scenarios in exporttool.
+        - Added extra fields to listgrids in exporttool.
+    lizard-worker to 0.8
+       - Removed 'heartbeat' connection parameter due update in pika.
+       - Pinned to pika >= 0.9.8
+    lizard-base to 1.33
+       - Added some tracking Javascript to index.html
+
+Increased the gunicorn timeout to 300 seconds. Increased the nginx timeout
+for the URL /flooding/excel/ to 300 seconds.
+
+1.36 (2012-11-13)
+-----------------
+
+- Task 220 now works correctly.
+
+
+1.35 (2012-11-12)
+-----------------
+
+- Nothing changed yet.
+
+
+1.34 (2012-11-12)
+-----------------
+
+- Pinned threedilib 0.3: new colors for 3Di results, detailed maps.
+
+
+1.33 (2012-11-09)
+-----------------
+
+Flooding-lib to 2.29, small fixes in the scenario info window:
+- Ja/Nee instead of True/False
+- 'Extern Water' translates to 'Buitenwater'
+- List the scenarioid at the top of the fields under Scenario
+
+
+
+1.32 (2012-10-31)
+-----------------
+
+- Flooding-lib to 2.28:
+  Fix problems with util/flshinc. Apparently there is more variety in
+  the exact format of FLS files than I thought.
+
+
+1.31 (2012-10-31)
+-----------------
+
+- Pinned lizard-worker to 0.7:
+    Added default value to scenario_type in body.
+    Added scenario_type field to Workflow model.
+    Created migration schemas (fake initial schema on update).
+
+- Pinned flooding-lib to 2.27:
+    Replaced os.sep with '/' due problem in windows.
+
+
+1.30 (2012-10-30)
+-----------------
+
+- Added tasks 210 and 220 to staging-task-200.cfg.
+
+- Added threedilib to pins (does nothing yet without flooding-lib with
+  task 210, 220)
+
+- Pinned flooding-lib 2.25 (task 210, 220)
+
+- Pinned flooding-lib to 2.26 (enhanced calculate scenario statistics task)
+
+1.29 (2012-10-23)
+-----------------
+
+- Pinned lizard-worker to 0.5:
+    Fixed error in reque_failed_message function by empty MAX_FEAILURE_TMP in body.
+
+
+1.28.2 (2012-10-23)
+-------------------
+
+- Minor fix for bin/fab staging_taskserver update_task.
+
+- Pinned lizard worker 0.4: The export page uses new features from
+  lizard worker.
+
+
+1.28.1 (2012-10-23)
+-------------------
+
+- Pinned 2.24.1: the page exporteren has been updated.
+
+
+1.28 (2012-10-23)
+-----------------
+
+- Added experimental fabfile functions for task 200 server.
+
+- Added buildout config file for task 200 server.
+
+- Add correct 'EXTERNAL_RESULTS_MOUNTED_DIR' etc to stagingsettings
+
+
+1.27.1 (2012-10-22)
+-------------------
+
+Increase flooding-lib to 2.23.1 for a tiny change to the breach info
+page (so that links to scenarios actually work...)
+
+
+1.27 (2012-10-19)
+-----------------
+
+Increase flooding-base to 1.32:
+Add Javascript that can open a specific project/scenario upon loading
+the homepage.
+
+Get the information about which scenario to open from the session (it
+is set in a view in flooding-lib).
+
+Increase flooding-lib to 2.23:
+Adapt comment line removing functions so that they can also be called
+on individual files, and don't depend on the size of /tmp on the
+webserver anymore.
+
+Change the zipfile creation functions so that they don't try to do
+everything in memory.
+
+Add a link (/flooding/preload/<project_id>/</scenario_id>/) that puts
+relevant information in the session and then redirects to the front
+page. Code in flooding-base 1.32 then causes the right scenario to
+open.
+
+
+1.26 (2012-10-17)
+-----------------
+
+Increase flooding-lib to 2.22:
+Replaced the parameter 'scenario_id' with 'body' in perform_task function of
+'tasks.perform_task' module.
+
+Increase lizard-worker to 0.3:
+Replaced the parameter 'scenario_id' with 'body' in callback function of
+'action_task' module.
+
+
+1.25 (2012-10-17)
+-----------------
+
+Increase flooding-lib to 2.21:
+Adds a view that returns a zipfile containing all the result files of a
+given scenario, possibly first unzipped. The view checks whether the
+user has approval permissions in at least one of the projects the
+scenario belongs to.
+
+Adds the view to the breach info page as a 'download' link for each
+scenario listed.
+
+Adds a 'check_scenario_permission' method to the permission manager.
+
+
+
+1.24 (2012-10-16)
+-----------------
+
+- Configured flooding_lib.perform_task module.
+
+- Removed sentry handler.
+
+- Pinned lizard-worker 0.2.
+
+- Removed flooding-worker.
+
+- Increase flooding-lib to 2.20
+Added tasks and perform_task.py.
+Changed references flooding_worker to lizard_worker.
+
+
+1.23 (2012-10-15)
+-----------------
+
+- Increase flooding-worker to 1.6
+Modify calculate_scenario_statistics so that it also under Windows
+(there were problems with deleting directories while the files in them
+were still open).
+
+
+1.22 (2012-10-15)
+-----------------
+
+- Increase flooding-worker to 1.5
+Added task TASK_CALCULATE_STATISTICS.
+Fixed error on model's combination in openbreach.py.
+
+
+1.21 (2012-10-15)
+-----------------
+
+- Increased flooding-lib to 2.19. Changes:
+Added an OpenStreetMap background for the max water depth
+images. Synchronized panning and zooming, and checkboxes to turn them
+on and off (in case there are many on one page and the user wants to
+compare two).
+
+Fix a bug with Excel metadata downloads. This was caused by new mixins
+for all class based views, that set all kwargs on the view and always
+add a permission manager. This meant that the kwargs weren't sent as
+arguments anymore, resulting in an exception. It also meant that the
+@receives_permission_manager decorators on class based views can be
+removed.
+
+- Configured task CALCULATE_SCENARIO_STATISTICS.
+
+
+1.20 (2012-10-10)
+-----------------
+
+Increased flooding-lib to 2.18. Changes:
+
+The remove comments script would unzip files that don't fit on the
+filesystem. Now it has a fixed limit of 1G for the unzipped files.
+
+Added a management command that can restore the old approval comments
+that were lost when we moved to all-approvaltool approvals.
+
+Decreased width of the headers of max water depth images on the breach
+info screen; it's nice that the images themselves aren't large, but if
+their title is too wide you still can't see them side to side.
+
+
+1.19 (2012-10-09)
+-----------------
+
+Increased flooding-lib to 2.17.2. Changes:
+Fix to a bug with deleting comment lines at import time.
+
+A "Breach info" page for ROR/Landelijk Gebruik approvers that shows
+some summary info per scenario at a breach location.
+
+Increased flooding-lib to 2.16.
+Changes:
+If there are ROR scenarios under a breach, and user is allowed to see
+them, show an (I) icon next to the breach
+
+Add a view and a template for the page that shows them.
+
+Add several class based view mixins, we're going to use those
+consistently from now on.
+
+Start pages.py for standalone pages.
+
+Add methods to Scenario for getting results and presentation layers.
+
+Add new resulttypes for total inundation volume and inundated area.
+
+Make numbers in the new breach info page human readable.
+
+Increased flooding-worker to 1.4:
+Added task that can calculate scenario statistics (namely, total
+inundation area and inundated volume). Also made it into a management
+command for ease of use.
+
+Increased flooding-base to 1.31:
+Changed Javascript, now showing an (I) icon link after some breaches
+(only works with new services.py from flooding-lib).
+
+
+Increased flooding-lib to 2.15.
+Changes:
+Added functions to walk a directory tree structure and scan all its
+files, even files included in .zip files.
+
+Added functions that check if any of those have is an .asc or .inc
+with a comment line (starting with /*), and remove it.
+
+Also add a management command for that.
+
+Also add that functionality to uploaded files in the importtool.
+
+Increased floding-worker to 1.3
+
+Changes:
+Close db connection in png_genaration.py before saving images.
+Exclude an empty value of color_mapping_name field bij in png_generation.py.
+Added authentication check.
+
+
+1.18 (2012-09-07)
+-----------------
+
+Increased flooding-lib to 2.14
+
+Changes:
+Add functionality for auto-start of seanrio's calculation
+on create and import a new scenario.
+
+Increased flooding-worker to 1.2
+
+Changes:
+Close connection before spawning subprocess and on the end
+of the task.
+
+1.17 (2012-09-05)
+-----------------
+
+Increased flooding-lib to 2.13.1.
+
+Changes in 2.13:
+Add two boolean fields 'has_sobek_presentation' and
+'has_hisssm_presentation' to Scenario that will be set to True by
+flooding-worker tasks 155 and 185 when they are successful.
+
+Changes in 2.13.1:
+Fix a bug in groupimport; a primary key (id=1) was hardcoded for an
+approval object type, even though that primary key doesn't exist
+anymore in production. It now correctly uses the
+default_approval_type() class method.
+
+1.16 (2012-09-03)
+-----------------
+
+Increased flooding-lib to 2.12:
+- Add two boolean fields 'has_sobek_presentation' and
+ 'has_hisssm_presentation' to Scenario that will be set to True by
+ flooding-worker tasks 155 and 185 when they are successful.
+
+Increased flooding_worker to 1.1:
+- Add functionality to update the Scenario's status in task 155 and 185.
+
+1.15 (2012-08-31)
+-----------------
+
+Increased flooding-lib to 2.12 two fix two bugs:
+- Sometimes a scenario was seen as missing some required metadata, but
+  if that metadata is outside of the control of the scenario owner
+  that should be ignored
+- Sometimes the data owner information (which is used to decide which
+  province a scenario is in) is stored as an int, sometimes as a
+  string. The province-deciding function can now use both.
+
+- Increased flooding-lib to 2.11.2 because the workflow_template field
+  wasn't set yet.
+
+- Added a template to view the flooding scenarios, workflows, loggings.
+
+- Added functionality to run scenario from GUI.
+
+- Updated flooding-worker to 1.0
+
+- Sort scenarios by id in the template scenarios_processing.html.
+
+- Updated nens package to 1.11.
+
+1.14.1 (2012-08-29)
+-------------------
+
+Increased flooding-lib to 2.11.1 for a small fix (create excel files
+management command didn't work).
+
+
+1.14 (2012-08-29)
+-----------------
+
+Increase flooding-lib to 2.11. Changes since the previous version:
+
+If a user uploading an Excel file for a project has approval rights in
+that project, the approval information in that file as read as well.
+
+Error messages on the ROR dashboard has improved, in the sense that they
+are actually shown now. There is also a success message.
+
+Invalid approval values (values other than 0 or 1) now result in an
+error message instead of being silently ignored.
+
+Increase flooding-lib to 2.10. Changes since the previous version:
+
+- Added functionality to add a workflow_template to new scenario.
+
+- Added migration to create default workflow_templates.
+
+- Add a 'Goedkeuring' sheet to the Excel metadata export. It shows
+  scenarioid, scenario identification and scenario name, and the
+  approval status for each of the applicable approval rules, plus
+  remarks in an extra column. Code for generation and importing is now
+  done and unit testing, but not tested "for real" yet because we will
+  first make the necessary user interface in a branch.
+
+- Added a 'flooding_lib.sharedproject' sub-app that will hold pages
+  and models to do with the ROR and Landelijk gebruik projects.
+  A 'ROR dashboard' is now available under /flooding/shared/ror/,
+  down- and uploading Excel files per province works.
+
+- Make it mandatory to first collect all the necessary metadata before
+  a scenario can be shared.
+
+- Automatically set the value for the 'Metadata complete' approval
+  rule when a scenario is accepted into one of the national projects.
+
+
+
+1.13 (2012-08-24)
+-----------------
+
+Increase flooding-lib to 2.9. Changes since the previous version:
+
+There were problems related to having a scenario in multiple projects,
+approval, and visibility on the site.
+
+- To normal users, only approved scenarios should be visible. This needs
+  to check approval status in the right project (the project that gives
+  the user viewing rights).
+
+- For users with approval rights, an unapproved scenario is also visible,
+  however the approval rights and unapproved status should relate to the
+  same project.
+
+- In the user interface, it may have been established that a user can
+  see a given scenario, but it is still possible that it should be
+  shown to the user only in some projects, not in all the projects the
+  scenario may be in.
+
+These issues were fixed.
+
+In general, checking for the scenario statuses 'STATUS_APPROVED' and
+'STATUS_DISAPPROVED' is dubious because they related only to the main
+project and should maybe be removed in the future.
+
+The scenarioproject table now has a cacheing 'approved' nullboolean that
+is faster to use than the equivalent functions on ApprovalObject that need
+to hit the database. There is a schema migration and a data migration to
+create this field.
+
+
+1.12 (2012-08-23)
+-----------------
+
+Increase flooding-lib to 2.8. Changes since the previous version:
+
+Fix showing scenarios under projects in the user interface. A scenario
+can occur in multiple projects, which means that it should be shown
+under both projects in the user interface. Also, if a scenario that is
+visible for a user because it is in a project that the user has rights
+to is also in another project that the user doesn't have right to, the
+second project shouldn't be shown at all. Both fixed.
+
+Change the way that select fields in ExtraScenarioInfo rows are saved
+(now as a string containing their value). Fix places where they are
+displayed, add tests.
+
+
+
+1.11 (2012-08-17)
+-----------------
+
+- Nothing changed yet.
+
+
+1.10.1 (2012-08-17)
+-------------------
+
+- Nothing changed yet.
+
+
+1.10 (2012-08-17)
+-----------------
+
+- Nothing changed yet.
+
+
+1.9.1 (2012-08-16)
+------------------
+
+- Nothing changed yet.
+
+
+1.9 (2012-08-16)
+----------------
+
+Fixes to Excel export/import, update to flooding-lib 2.6.1. Time to
+release.
+
+
+1.8 (2012-08-15)
+----------------
+
+Increase to 2.5.2. Improvements to the Excel import/export. Also fixes
+a bug where a scenario's status didn't update after checking its
+approval rules.
+
+
+1.7 (2012-08-14)
+----------------
+
+Increase flooding-lib to 2.4.2 for another bug fix (approving
+scenarios for import doesn't work).
+
+
+1.6.1 (2012-08-14)
+------------------
+
+Increased flooding-lib to 2.4.1, hopefully the import actually works
+now...
+
+
+1.6 (2012-08-14)
+----------------
+
+- Increased flooding-lib to 2.4. The import new scenario page wasn't
+  working, this includes a quick fix.
+
+
+1.5 (2012-08-10)
+----------------
+
+- Increased flooding-lib to 2.3.
+
+
+1.4.1 (2012-07-23)
+------------------
+
+Trunk: updated to flooding-lib 2.0.1, which is a hotfix branch.
+
+Approval objects will be completely changed. Because of this, all the
+old ones need to be cleared from the database. First run all the
+migrations of flooding_lib, then the migrations of approvaltool.
+
+Updated flooding-base to 1.27 (cleanup).
+
+After release, an ApprovalType for ROR should be set up, and the ROR
+project should be changed so that it uses that type by default (right
+now that's a manual database action).
+
+1.4 (2012-07-09)
+----------------
+
+New versions of the Group import example files. Moved them into the
+flooding site because they are updated now and then, makes it easier
+to do releases.
+
+Therefore, updated to flooding-base 1.26 which doesn't have the
+example files anymore.
+
+1.3 (2012-07-09)
+----------------
+- Tasks to do after update:
+    bin/django loaddata flooding/fixtures/flooding_base_setting.json
+    bin/django dbshell
+        drop table lizard_flooding_worker_tasktype CASCADE;
+        drop table lizard_flooding_worker_workflow CASCADE;
+        drop table lizard_flooding_worker_workflowtask CASCADE;
+        drop table lizard_flooding_worker_logging CASCADE;
+        drop table lizard_flooding_worker_workflowtemplate CASCADE;
+        drop table lizard_flooding_worker_workflowtemplatetask CASCADE;
+    bin/django shell
+        from south.models import *
+        MigrationHistory.objects.filter(app_name='flooding_worker').delete()
+    bin/django migrate flooding_worker
+    bin/django loaddata flooding_worker
+
+    bin/django migrate flooding_lib, but both 0001 and 0009 must be faked!
+
+- Updated flooding-worker to 0.6.2:
+    - Replaced dependency floding_worker.Workflow to flooding_lib.Scenario.
+    - Created a new initial migrationschema.
+    - Removed brokerconfig.py
+
+- Updated flooding-lib to 2.0:
+    1.35:
+    - Add breadcrumbs to add files screen in import (#3687)
+    - Make WAITING the default state for new ImportScenarios (#3685)
+    - Large scale code formatting (pep8/pyflakes), down to 0 errors
+      from ~2300
+    - Refactor and test import code some more (move functionality from
+      views into models)
+    - Fixed import of PIL.Image.
+    1.36:
+    - Changed scenario fields to null=True to make testing easier
+    - Added ScenarioProject model
+    - Did many changes to many files to make it possible to have
+      a scenario be part of many projects (through ScenarioProject),
+      instead of with the old foreign key
+    - Changed scenario fields to null=True to make testing easier
+    - Added 'color_mapping_name' field to 'Project' model (the field
+      exists yet, fake it on migration).
+    1.37:
+    - Fix issues relating to #3705; obviously import wasn't tested yet and
+      there were several typos and things that couldn't work. Works on my
+      development machine now.
+    1.38:
+    - Solves issues from Trac #3682. In the scenario info window:
+    - Coordinates are shown in RD, not WGS84
+    - Intervals are shown as '2 d 12:00', not as 2.5
+    - Values like '-999' are treated as null values
+    1.39:
+    We are testing and fixed the following issues:
+    - Restored a scenario.project_id field for the benefit of the old uitvoerder.py scripts
+    - Forgot to set field.value_str instead of field.value for the
+      scenario ID that we hack into the info window by hand
+    - 999 was also sometimes used as a sentinel, just like -999. Ignore it too.
+    - Changed another .project to .main_project
+    - We should really use Unicode everywhere, people use non-ASCII
+      characters and there's no reason why we should crash on them
+    - Added an 'ignore' directory to .gitignore, helpful to put silly
+      temporary files in
+    - Updated flooding.settings due import error of PIL.Image
+    - Added 'YEAR' setting to flooding_base.Setting for hisssm_160 task
+      (as new record)
+    2.0:
+    - Fix tickets #3684 and #3711
+    - Version bump just because
+
+1.2 (2012-06-15)
+----------------
+
+- Changed to flooding-base, flooding-lib and flooding-worker, on Git.
+
+- Required new versions of the libraries, because of all the name changes.
+
+- Added flooding/localsettings.py to .gitignore.
+
+1.1.7 (2012-05-16)
+------------------
+
+- Nothing changed yet.
+
+
+1.1.6 (2012-05-10)
+------------------
+
+- Increased lizard-flooding version.
+
+
+1.1.5 (2012-05-04)
+------------------
+
+- Changed configuration for Nginx so that it can download files from
+  /mnt/flooding, internal only (using X-Accelerated-Redirect).
+
+
+1.1.4 (2012-04-24)
+------------------
+
+- Nothing changed yet.
+
+
+1.1.3 (2012-03-27)
+------------------
+
+- Nothing changed yet.
+
+
+1.1.2 (2012-03-07)
+------------------
+
+- pinned new versino of lizard-flooding (1.17), solved a bug during saving
+
+
+1.1.1 (2012-03-06)
+------------------
+
+- Correct SYMBOLS_DIR, GISDATA settings.
+
+
+1.1 (2012-03-02)
+----------------
+
+- pinned new version of lizard-flooding (1.16)
+
+- added new var directory for generated icons
+
+- changed mount dirs in settings.py
+
+
+1.0.6 (2012-03-01)
+------------------
+
+- removed a lot of unused files form weblib
+
+- added django debug bar
+
+- removed CSRF middleware
+
+- pinned new version of lizard-flooding (1.15)
+
+
+1.0.5 (2012-03-01)
+------------------
+
+- Nothing changed yet.
+
+
+1.0.4 (2012-03-01)
+------------------
+
+- Changed production database settings. Removed apache config files.
+
+
+1.0.3 (2012-03-01)
+------------------
+
+- Increased django-staticfiles version trying to get it to work.
+
+
+1.0.2 (2012-03-01)
+------------------
+
+- Changed path to external data share.
+
+
+1.0.1 (2012-03-01)
+------------------
+
+- Fixed staging settings.
+
+
+1.0 (2012-03-01)
+----------------
+
+- Lots of changes for the move to Amsterdam, new buildouts
+
+
+0.14 (2011-05-25)
+-----------------
+
+- Nothing changed yet.
+
+
+0.13 (2011-05-06)
+-----------------
+
+- Nothing changed yet.
+
+
+0.12 (2011-05-06)
+-----------------
+
+- Nothing changed yet.
+
+
+0.11 (2011-04-18)
+-----------------
+
+- Nothing changed yet.
+
+
+0.10 (2011-03-25)
+-----------------
+
+- Nothing changed yet.
+
+
+0.9 (2011-03-23)
+----------------
+
+- Nothing changed yet.
+
+
+0.8 (2011-03-03)
+----------------
+
+- Nothing changed yet.
+
+
+0.7 (2011-02-08)
+----------------
+
+- Nothing changed yet.
+
+
+0.6 (2011-02-07)
+----------------
+
+- Nothing changed yet.
+
+
+0.5 (2011-02-01)
+----------------
+
+- Including a couple of fixes to the setup from production.
+
+
+0.4 (2011-02-01)
+----------------
+
+- Nothing changed yet.
+
+
+0.3 (2011-02-01)
+----------------
+
+- Nothing changed yet.
+
+
+0.2 (2011-01-20)
+----------------
+
+- Nothing changed yet.
+
+
+0.1 (2010-04-23)
+----------------
+
+- Fixed up the configuration: database, domainname, external PNGs with model
+  results, etc.
+
+- Initial library skeleton created by nensskel.

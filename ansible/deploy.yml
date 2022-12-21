@@ -1,0 +1,60 @@
+# Goal: do the day-to-day deployment of the site. This is done as the
+# 'buildout' user, not as root. At least, we're going to try to do it like
+# this. You need to have an ssh key configured to log in with: this is handled
+# in the provision.yml playbook.
+
+---
+- name: Deploy a new version of the project to the web server.
+  hosts:
+    - web
+    - task
+  remote_user: "{{ build_user }}"
+  tasks:
+    - name: Checkout correct version from github (assumes pull-only private key)
+      git:
+        accept_hostkey: yes
+        dest: "{{ project_path }}"
+        repo: ssh://git@github.com/lizardsystem/flooding.git
+        version: "{{ checkout_name }}"
+    
+    - name: Symlink buildout configuration file
+      file:
+        src: "{{ project_path }}/{{ buildout_cfg }}"
+        dest: "{{ project_path }}/buildout.cfg"
+        state: link
+        force: yes
+    
+    - name: "Deploy (look at buildout.log if something goes fishy)"
+      shell: buildout -vv > buildout.log 2>&1
+      args:
+        chdir: "{{ project_path }}"
+
+    - name: Run migrate
+      shell: bin/django migrate
+      when: inventory_hostname in groups['web']
+      args:
+        chdir: "{{ project_path }}"
+
+    - name: Stop nginx
+      shell: sh -c "sudo service nginx stop"
+      when: inventory_hostname in groups['web']
+
+    - name: Shut down supervisor.
+      shell: "bin/supervisorctl shutdown"
+      args:
+        chdir: "{{ project_path }}"
+      ignore_errors: yes
+
+    - name: Wait for supervisor to actually stop.
+      wait_for:
+        path: "{{ project_path }}/var/supervisord.pid"
+        state: absent
+
+    - name: Start site with supervisor.
+      shell: "bin/supervisord"
+      args:
+        chdir: "{{ project_path }}"
+
+    - name: Start nginx
+      shell: sh -c "sudo service nginx start"
+      when: inventory_hostname in groups['web']

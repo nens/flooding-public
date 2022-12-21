@@ -1,0 +1,9 @@
+# Include docs in the root.
+include *.rst
+include *.txt
+# Include everything in our project directory.
+graft flooding_lib
+graft flooding_presentation
+graft flooding_visualization
+graft flooding_base
+graft raster_server

@@ -1,0 +1,131 @@
+CNTL id 'cd_KST-Q-23318' nm -99999 ct 0 ac 1 ca 3 cf 1 mc 0 bl 1 ti tv
+PDIN 1 1 '365;00:00:00' pdin
+TBLE
+'1900/04/01;00:00:00' -0.65 <
+'1900/04/01;01:00:00' -0.5 <
+'1900/10/01;00:00:00' -0.5 <
+'1900/10/01;01:00:00' -0.65 <
+tble cntl
+CNTL id 'cd_KST-Q-24546' nm -99999 ct 0 ac 1 ca 3 cf 1 mc 0 bl 1 ti tv
+PDIN 1 1 '365;00:00:00' pdin
+TBLE
+'1900/04/01;00:00:00' -0.85 <
+'1900/04/01;01:00:00' -0.5 <
+'1900/10/01;00:00:00' -0.5 <
+'1900/10/01;01:00:00' -0.85 <
+tble cntl
+CNTL id 'KDU-Q-4185' nm 'Cntr_KDU-Q-4185' ct 2 ac 1 ca 3 cf 1 ml 'Ms_2020E' cp 0 ui 0.0002778 ua 0 cn 1 du 0 cv 1 dt 0 d_ 0.025 bl 1 sp tc 1
+TBLE
+'1900/10/01;00:00:00' -.675 <
+'1901/03/31;23:59:00' -.675 <
+'1901/04/01;00:00:00' -.525 <
+'1901/09/30;23:59:00' -.525 <
+tble cntl
+CNTL id 'KDU-Q-inlaat' nm 'Cntr_KDU-Q-inlaat' ct 2 ac 1 ca 3 cf 1 ml 'Ms_2020D' cp 0 ui 0.0002778 ua 0 cn 1 du 0 cv 1 dt 0 d_ 0.025 bl 1 sp tc 1
+TBLE
+'1900/10/01;00:00:00' -.525 <
+'1901/03/31;23:59:00' -.525 <
+'1901/04/01;00:00:00' -.875 <
+'1901/09/30;23:59:00' -.875 <
+tble cntl
+CNTL id 'KGM-Q-29132' nm 'Cntr_KGM-Q-29132' ct 2 ac 1 ca 3 cf 1 ml 'Ms_2020C' cp 0 ui 0 ua 0.0666667 cn 1 du 0 cv 1 dt 0 d_ 0.05 bl 1 sp tc 1
+TBLE
+'1900/10/01;00:00:00' -.85 <
+'1901/03/30;23:59:00' -.85 <
+'1901/04/01;00:00:00' -.55 <
+'1901/09/30;23:59:00' -.55 <
+tble cntl
+CNTL id 'KGM-A-369' nm 'Cntr_KGM-A-369' ct 2 ac 1 ca 3 cf 1 ml 'Ms_2020D' cp 0 ui 0 ua 0.3333333 cn 1 du 0 cv 1 dt 0 d_ 0.05 bl 1 sp tc 1
+TBLE
+'1900/10/01;00:00:00' -.85 <
+'1901/03/30;23:59:00' -.85 <
+'1901/04/01;00:00:00' -.5 <
+'1901/09/30;23:59:00' -.5 <
+tble cntl
+CNTL id 'KDU-B-613' nm 'Cntr_KDU-B-613' ct 2 ac 1 ca 3 cf 1 ml 'Ms_2020D' cp 0 ui 0.0002778 ua 0 cn 1 du 0 cv 1 dt 0 d_ 0.025 bl 1 sp tc 1
+TBLE
+'1900/10/01;00:00:00' -.875 <
+'1901/03/30;23:59:00' -.875 <
+'1901/04/01;00:00:00' -.525 <
+'1901/09/30;23:59:00' -.525 <
+tble cntl
+CNTL id 'KGM-D-2' nm 'Cntr_KGM-D-2' ct 2 ac 1 ca 3 cf 1 ml 'Ms_2020B' cp 0 ui 0 ua 0.0333333 cn 1 du 0 cv 1 dt 0 d_ 0.05 bl 1 sp tc 1
+TBLE
+'1900/10/01;00:00:00' -.9 <
+'1901/03/30;23:59:00' -.9 <
+'1901/04/01;00:00:00' -.55 <
+'1901/09/30;23:59:00' -.55 <
+tble cntl
+CNTL id 'KGM-Q-29208' nm 'Cntr_KMG-Q-29208' ct 2 ac 1 ca 3 cf 1 ml 'Ms_2020A' cp 0 ui 0 ua 0.6833333 cn 1 du 0 cv 1 dt 0 d_ 0.05 bl 1 sp tc 1 PDIN 1 1 '365;00:00:00' pdin
+TBLE
+'1900/10/01;00:00:00' -1 <
+'1901/03/30;23:59:00' -1 <
+'1901/04/01;00:00:00' -.6 <
+'1901/09/30;23:59:00' -.6 <
+tble cntl
+CNTL id 'KDU-Q-1421' nm 'Cntr_KDU-Q-1421' ct 2 ac 1 ca 3 cf 1 ml 'Ms_2020C' cp 0 ui 0.0002778 ua 0 cn 1 du 0 cv 1 dt 0 d_ 0.025 bl 1 sp tc 1
+TBLE
+'1900/10/01;00:00:00' -.875 <
+'1901/03/30;23:59:00' -.875 <
+'1901/04/01;00:00:00' -.575 <
+'1901/09/30;23:59:00' -.575 <
+tble cntl
+CNTL id 'KDU-Q-2138' nm 'KDU-Q-2138' ct 1 ac 1 ca 0 cf 1 ml 'Ms_2020A' cp 0 bl 1 hc ht 1
+TBLE
+-1 -.5 <
+-.55 -.5 <
+-.05 0 <
+tble cntl
+CNTL id 'KDU-Q-2146' nm 'Cntr_KDU-Q-2146' ct 1 ac 1 ca 0 cf 1 ml 'Ms_2020A' cp 0 bl 1 hc ht 1
+TBLE
+-1 -.5 <
+-.55 -.5 <
+-.05 0 <
+tble cntl
+CNTL id 'KST-Q-23955' nm 'Cntr_KST-Q-23955' ct 2 ac 1 ca 3 cf 1 ml 'Ms_2020A' cp 0 ui 0.0002778 ua 0 cn 1 du 0 cv 1 dt 0 d_ 0.025 bl 1 sp tc 1
+TBLE
+'1900/10/01;00:00:00' -1.025 <
+'1901/03/30;23:59:00' -1.025 <
+'1901/04/01;00:00:00' -.625 <
+'1901/09/30;23:59:00' -.625 <
+tble cntl
+CNTL id 'KDU-Q-2138a' nm 'KDU-Q-2138a' ct 1 ac 1 ca 0 cf 1 ml 'Ms_2020A' cp 0 bl 1 hc ht 1
+TBLE
+-1 -.85 <
+-.95 -.85 <
+-.1 0 <
+tble cntl
+CNTL id 'KDU-Q-2138zom' nm 'KDU-Q-2138zom' ct 0 ac 1 ca 0 cf 1 mc 0 bl 1 ti tv PDIN 1 1 '365;00:00:00' pdin
+TBLE
+'1999/04/15;00:00:00' -1.5 <
+'1999/10/15;00:00:00' 999 <
+tble cntl
+CNTL id 'KDU-Q-2138win' nm 'KDU-Q-2138win' ct 0 ac 1 ca 0 cf 1 mc 0 bl 1 ti tv PDIN 1 1 '365;00:00:00' pdin
+TBLE
+'1999/10/15;00:00:00' -1.5 <
+'2000/04/15;00:00:00' 999 <
+tble cntl
+CNTL id 'KDU-Q-2146zom' nm 'KDU-Q-2146zom' ct 0 ac 1 ca 0 cf 1 mc 0 bl 1 ti tv PDIN 1 1 '365;00:00:00' pdin
+TBLE
+'1999/04/15;00:00:00' -1.5 <
+'1999/10/15;00:00:00' 999 <
+tble cntl
+CNTL id 'KDU-Q-2146win' nm 'KDU-Q-2146win' ct 0 ac 1 ca 0 cf 1 mc 0 bl 1 ti tv PDIN 1 1 '365;00:00:00' pdin
+TBLE
+'1999/10/15;00:00:00' -1.5 <
+'2000/04/15;00:00:00' 999 <
+tble cntl
+CNTL id 'KDU-Q-2146a' nm 'KDU-Q-2146a' ct 1 ac 1 ca 0 cf 1 ml 'Ms_2020A' cp 0 bl 1 hc ht 1
+TBLE
+-1 -.85 <
+-.95 -.85 <
+-.1 0 <
+tble cntl
+CNTL id '24' nm 'Gemaal Zwaan' ct 2 ac 1 ca 3 cf 1 ml 'Ms_2020A' cp 0 ui 0 ua 0.6833 cn 1 du 0 cv 1 dt 0 d_ 0.05 bl 1 sp tc 1
+PDIN 1 1 '365;00:00:00' pdin
+TBLE
+'1900/10/15;00:00:00' -1 < 
+'1901/04/14;23:59:00' -1 < 
+'1901/04/15;00:00:00' -.6 < 
+'1901/10/14;23:59:00' -.6 < 
+tble cntl

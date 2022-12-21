@@ -1,0 +1,129 @@
+version: '3'
+services:
+
+  # webtest:
+  #   image: flooding-new
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile-new
+
+  #   command: bin/django runserver 0.0.0.0:8000
+  #   depends_on:
+  #     - db
+  #     - rabbit
+  #     - celery
+  #   environment:
+  #     - DOCKER=True
+  #     - PYTHONUNBUFFERED=1
+  #     # - PIPENV_VENV_IN_PROJECT=1
+  #     # - SHELL=/bin/bash
+  #   volumes:
+  #     - ./:/code
+  #     - ../nep_isilon:/p-isilon-d1.external-nens.local
+  #     - ~/.netrc:/home/nens/.netrc  # github authentication
+  #     - ~/.cache:/home/nens/.cache  # shared cache
+  #   volumes:
+  #     - ./:/code
+
+  db:
+    image: mdillon/postgis:9.3-alpine
+    environment:
+      POSTGRES_USER: 'flooding'
+      POSTGRES_PASSWORD: 'flooding'
+      POSTGRES_DB: 'flooding'
+      PGDATA: '/var/lib/postgresql/data/pgdata'
+    volumes:
+      - pgdata:/var/lib/postgresql/data/pgdata
+      - ./:/code
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    image: flooding
+    command: bin/django runserver 0.0.0.0:8000
+    depends_on:
+      - db
+      - rabbit
+      #      - celery
+    environment:
+      - DOCKER=True
+      - PYTHONUNBUFFERED=1
+      # - PIPENV_VENV_IN_PROJECT=1
+      # - SHELL=/bin/bash
+    volumes:
+      - ./:/srv/flooding.lizard.net
+      - ../nep_isilon:/p-isilon-d1.external-nens.local
+      - ~/.netrc:/home/nens/.netrc  # github authentication
+      - ~/.cache:/home/nens/.cache  # shared cache
+    ports:
+      - "8000:8000"
+      - "9200:9200"
+
+  tasks:
+    build: .
+    image: flooding
+    command: bin/supervisord -n
+    depends_on:
+      - db
+      - rabbit
+    environment:
+      - DOCKER=True
+      - PYTHONUNBUFFERED=1
+      # - PIPENV_VENV_IN_PROJECT=1
+      # - SHELL=/bin/bash
+    volumes:
+      - ./:/code
+      - ../nep_isilon:/p-isilon-d1.external-nens.local
+      - ~/.netrc:/home/nens/.netrc  # github authentication
+      - ~/.cache:/home/nens/.cache  # shared cache
+
+  rasterserver:
+    build: .
+    image: flooding
+    command: bin/gunicorn --bind=0.0.0.0:5000 raster_server.server:app
+    depends_on:
+      - db
+      - rabbit
+    environment:
+      - DOCKER=True
+      - PYTHONUNBUFFERED=1
+      - RASTER_SERVER_SETTINGS=/code/etc/rasterserver.json
+      # - PIPENV_VENV_IN_PROJECT=1
+      # - SHELL=/bin/bash
+    volumes:
+      - ./:/code
+      - ../nep_isilon:/p-isilon-d1.external-nens.local
+      - ~/.netrc:/home/nens/.netrc  # github authentication
+      - ~/.cache:/home/nens/.cache  # shared cache
+    ports:
+      - "5000:5000"
+
+  celery:
+    build: .
+    image: flooding
+    command: bin/celery-with-settings worker -A flooding.celery.app
+    depends_on:
+      - db
+      - rabbit
+    environment:
+      - DOCKER=True
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./:/code
+      - ../nep_isilon:/p-isilon-d1.external-nens.local
+      - ~/.netrc:/home/nens/.netrc  # github authentication
+      - ~/.cache:/home/nens/.cache  # shared cache
+
+  rabbit:
+    image: rabbitmq:3-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=flooding
+      - RABBITMQ_DEFAULT_PASS=flooding
+      - RABBITMQ_DEFAULT_VHOST=flooding
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+volumes:
+  pgdata:

@@ -1,0 +1,48 @@
+wlm:2.5
+[General]
+Version=WLM2.00
+Days=YYYYMMDD
+Times=HHMM
+Timestep=DDDHHMMSS
+
+[RUNID]
+runid1=Waste Load Model
+runid2=Calculation results
+runid3=Test run
+runid4=
+iscu=1
+
+[WLM]
+begin_day=19991015
+begin_time=0800
+end_day=19991030
+end_time=0800
+timestep=000010000
+
+[Hydrology]
+begin_day=19991015
+begin_time=0800
+end_day=19991030
+end_time=0800
+timestep=000010000
+PeriodFromEvent=0
+
+[Emission variables]
+begin_day=910101
+begin_time=1200
+end_day=911231
+end_time=1200
+timestep=365000000
+
+[Emission factors]
+begin_day=910101
+begin_time=1200
+end_day=911231
+end_time=1200
+timestep=28000000
+
+[Monitoring data]
+begin_day=910101
+begin_time=0000
+end_day=911231
+end_time=0000
